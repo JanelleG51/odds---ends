@@ -1,0 +1,15 @@
+html {
+   height: 100%;
+}
+
+body {
+    background: rgb(85, 1, 1);
+    background-size: cover;
+    height: calc(100vh - 164px);
+    color:whitesmoke;
+}
+
+.header-container {
+    padding-top: 25px;
+}
+
