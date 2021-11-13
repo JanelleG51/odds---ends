@@ -72,10 +72,10 @@
                     <a href="" class="dropdown-item">Product Management</a>
                 {% endif %}
                     <a href="" class="dropdown-item">My Profile</a>
-                    <a href="" class="dropdown-item">Sign Out</a>
+                    <a href="{% url 'account_logout' %}" class="dropdown-item">Sign Out</a>
                 {% else %}
-                    <a href="" class="dropdown-item">Register</a>
-                    <a href="" class="dropdown-item">Sign In</a>
+                    <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                    <a href="{% url 'account_login' %}" class="dropdown-item">Sign In</a>
                 {% endif %}
               </div>
             </li>
@@ -99,19 +99,15 @@
           </ul>
         </div>
       </div>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light w-100">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav text-center">
-            <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link" href="#">Wines</a>
-            <a class="nav-item nav-link" href="#">My Profile</a>
-            <a class="nav-item nav-link" href="#"></a>
-          </div>
-        </div>
-      </nav>
+      <div class="row bg-white">
+        <nav class="navbar navbar-expand-lg navbar-light w-100">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+                {% include 'includes/mobile-top-header.html' %}
+                {% include 'includes/main-nav.html' %}
+        </nav>
+    </div>
     </header>
 
     {% if messages %}
