@@ -3,31 +3,55 @@
         "model": "wines.category",
         "fields": {
             "name": "red",
-            "friendly_name": "Red Wines "
+            "friendly_name": "Red Wines"
         }
     },
     {
         "pk": "2",
         "model": "wines.category",
         "fields": {
-        "name": "rose",
-        "friendly_name": "Rose Wines "
+            "name": "rose",
+            "friendly_name": "Rose Wines"
         }
     },
     {
         "pk": "3",
         "model": "wines.category",
         "fields": {
-        "name": "sparkling",
-        "friendly_name": "Sparking & Champagne"
+            "name": "sparkling",
+            "friendly_name": "Sparkling & Champagne"
         }
     },
     {
         "pk": "4",
         "model": "wines.category",
         "fields": {
-        "name": "white",
-        "friendly_name": "White Wines "
+            "name": "white",
+            "friendly_name": "White Wines"
+        }
+    },
+    {
+        "pk": "5",
+        "model": "wines.case",
+        "fields": {
+            "name": "basic",
+            "friendly_name": "Basic Case"
+        }
+    },
+    {
+        "pk": "6",
+        "model": "wines.case",
+        "fields": {
+            "name": "premium",
+            "friendly_name": "Premium Case"
+        }
+    },
+    {
+        "pk": "7",
+        "model": "wines.case",
+        "fields": {
+            "name": "superior",
+            "friendly_name": "Superior Case"
         }
     }
 ]

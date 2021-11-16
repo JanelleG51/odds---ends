@@ -1,0 +1,37 @@
+[
+
+    {
+        "pk": 1,
+        "model": "wines.case",
+        "fields": {
+            "sku": "bsc00001",
+            "name": "Basic",
+            "price": 95.00,
+            "image": "noimage.png",
+            "category": 5
+        }
+    },
+    {
+        "pk": 2,
+        "model": "wines.case",
+        "fields": {
+            "sku": "prm00002",
+            "name": "Premium",
+            "price": 150.00,
+            "image": "noimage.png",
+            "category": 6
+        }
+    },
+    {
+        "pk": 3,
+        "model": "wines.case",
+        "fields": {
+            "sku": "spr00003",
+            "name": "Superior",
+            "price": 200.00,
+            "image": "noimage.png",
+            "category": 7
+        }
+    }
+
+]
