@@ -32,7 +32,7 @@
     },
     {
         "pk": "5",
-        "model": "wines.case",
+        "model": "wines.category",
         "fields": {
             "name": "basic",
             "friendly_name": "Basic Case"
@@ -40,7 +40,7 @@
     },
     {
         "pk": "6",
-        "model": "wines.case",
+        "model": "wines.category",
         "fields": {
             "name": "premium",
             "friendly_name": "Premium Case"
@@ -48,7 +48,7 @@
     },
     {
         "pk": "7",
-        "model": "wines.case",
+        "model": "wines.category",
         "fields": {
             "name": "superior",
             "friendly_name": "Superior Case"
