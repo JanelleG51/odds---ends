@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Wine, Case
 
 # Create your views here.
@@ -16,8 +16,21 @@ def all_wines(request):
     return render(request, 'wines/wines.html', context)
 
 
+def wine_detail(request, wine_id):
+    """ A view to show indivdual wine details """
+
+    wine = get_object_or_404(Wine, pk=wine_id)
+
+    context = {
+        'wine': wine,
+    }
+
+    return render(request, 'wines/wine_detail.html', context)
+
+
+
 def all_cases(request):
-    """ A view to show all wines, including sorting and search queries """
+    """ A view to show all cases, including sorting and search queries """
 
     cases = Case.objects.all()
 
@@ -26,3 +39,15 @@ def all_cases(request):
     }
 
     return render(request, 'wines/cases.html', context)
+
+
+def case_detail(request, case_id):
+    """ A view to show indivdual case details """
+
+    case = get_object_or_404(Case, pk=case_id)
+
+    context = {
+        'case': case,
+    }
+
+    return render(request, 'wines/case_detail.html', context)

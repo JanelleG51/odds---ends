@@ -1,22 +1,22 @@
 <div class="collapse navbar-collapse" id="main-nav">
     <ul class="navbar-nav w-auto mx-auto">
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="all-wines-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 All Wines
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-wines-link">
                 <a href="" class="dropdown-item">Country</a>
                 <a href="" class="dropdown-item ">By Price</a>
                 <a href="" class="dropdown-item ">By Rating</a>
-                <a href="" class="dropdown-item">All Wines</a>
+                <a href="{% url 'wines' %}" class="dropdown-item">All Wines</a>
             </div>
         </li>
 
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="clothing-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="whites-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 White Wines
             </a>
-            <div class="dropdown-menu border-0" aria-labelledby="white-wine-link">
+            <div class="dropdown-menu border-0" aria-labelledby="whites-link">
                 <a href="" class="dropdown-item">All Whites</a>
                 <a href="" class="dropdown-item">French</a>
                 <a href="" class="dropdown-item">Italian</a>
@@ -25,10 +25,10 @@
         </li>
 
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="clothing-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="reds-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Red Wines
             </a>
-            <div class="dropdown-menu border-0" aria-labelledby="white-wine-link">
+            <div class="dropdown-menu border-0" aria-labelledby="reds-link">
                 <a href="" class="dropdown-item">All Reds</a>
                 <a href="" class="dropdown-item">French</a>
                 <a href="" class="dropdown-item">Italian</a>
@@ -38,10 +38,10 @@
 
 
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="clothing-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="rose-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Rose Wines
             </a>
-            <div class="dropdown-menu border-0" aria-labelledby="white-wine-link">
+            <div class="dropdown-menu border-0" aria-labelledby="rose-link">
                 <a href="" class="dropdown-item">All Rose</a>
                 <a href="" class="dropdown-item">French</a>
                 <a href="" class="dropdown-item">Italian</a>
@@ -50,14 +50,26 @@
         </li>
 
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="clothing-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="sparkling-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                Sparkling & Champanges
             </a>
-            <div class="dropdown-menu border-0" aria-labelledby="white-wine-link">
+            <div class="dropdown-menu border-0" aria-labelledby="sparkling-link">
                 <a href="" class="dropdown-item">All Sparkling &amp; Champanges</a>
                 <a href="" class="dropdown-item">French</a>
                 <a href="" class="dropdown-item">Italian</a>
                 <a href="" class="dropdown-item">Spanish</a>
+            </div>
+        </li>
+
+        <li class="nav-item dropdown">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="cases-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               Cases
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="cases-link">
+                <a href="{% url 'cases' %}" class="dropdown-item">All Cases</a>
+                <a href="" class="dropdown-item">Basic</a>
+                <a href="" class="dropdown-item">Premium</a>
+                <a href="" class="dropdown-item">Superior</a>
             </div>
         </li>
 
