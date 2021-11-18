@@ -1,7 +1,7 @@
 [
 
     {
-        "pk": 201,
+        "pk": 1,
         "model": "wines.case",
         "fields": {
             "sku": "bsc00001",
@@ -12,7 +12,7 @@
         }
     },
     {
-        "pk": 202,
+        "pk": 2,
         "model": "wines.case",
         "fields": {
             "sku": "prm00002",
@@ -23,7 +23,7 @@
         }
     },
     {
-        "pk": 203,
+        "pk": 3,
         "model": "wines.case",
         "fields": {
             "sku": "spr00003",
