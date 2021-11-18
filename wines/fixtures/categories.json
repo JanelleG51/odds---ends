@@ -3,7 +3,7 @@
         "model": "wines.category",
         "fields": {
             "name": "red",
-            "friendly_name": "Red Wines"
+            "friendly_name": "Red"
         }
     },
     {
@@ -11,7 +11,7 @@
         "model": "wines.category",
         "fields": {
             "name": "rose",
-            "friendly_name": "Rose Wines"
+            "friendly_name": "Rose"
         }
     },
     {
@@ -27,7 +27,7 @@
         "model": "wines.category",
         "fields": {
             "name": "white",
-            "friendly_name": "White Wines"
+            "friendly_name": "White"
         }
     },
     {

@@ -34,22 +34,23 @@
                                 </a>
                                 {% endif %}
                                 <div class="card-body pb-0">
-                                    <p class="mb-0">{{ wine.name }}</p>
-                                    <p class="mb-0">Region {{ wine.region }}</p>
-                                    <p class="mb-0">Country {{ wine.country }}</p>
-                                    <p class="mb-0">Winery {{ wine.winery }}</p>
-                                    <p class="mb-0">Year {{ wine.year }}</p>
+                                    <p class="mb-0 text-center">{{ wine.name }}</p>
+                                    <p class="mb-0">{{ wine.winery }}</p>
+                                    <p class="mb-0">{{ wine.region }}</p>
+                                    <p class="mb-0">{{ wine.country }}</p>     
                                 </div>
-                                <div class="card-footer bg-white pt-0 border-0 text-left">
+                                <div class="card-footer bg-white pt-0 border-0 text-right">
                                     <div class="row">
                                         <div class="col">
-                                            <p class="lead mb-0 text-left">£{{ wine.price }}</p>
-                                            <p class="lead mb-0 text-left">{{ wine.category }}</p>
+                                            <p class="lead mb-0">£{{ wine.price }}</p>
+                                            <p class="lead mb-0">{{ wine.category.friendly_name }}</p>
+                                            <p><small class="mb-0 text-muted">{{ wine.year }}</small></p>
                                             {% if wine.rating %}
                                                 <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ wine.rating }} / 5</small>
                                             {% else %}
-                                                <small class="text-muted">No Rating</small>
+                                                <small class="text-muted">No Rating</small> 
                                             {% endif %}
+                                            
                                         </div>
                                     </div>
                                 </div>

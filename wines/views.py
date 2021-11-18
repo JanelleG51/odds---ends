@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.shortcuts import render, get_object_or_404
 from .models import Wine, Case, Category
 
 # Create your views here.
@@ -31,7 +31,6 @@ def all_wines(request):
             categories = request.GET['category'].split(',')
             wines = wines.filter(category__name__in=categories)
             categories = Category.objects.filter(name__in=categories)
-
 
     current_sorting = f'{sort}_{direction}'
 

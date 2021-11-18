@@ -19,9 +19,11 @@
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="whites-link">
                 <a href="{% url 'wines' %}?category=white" class="dropdown-item">All Whites</a>
-                <a href="" class="dropdown-item">French</a>
-                <a href="" class="dropdown-item">Italian</a>
-                <a href="" class="dropdown-item">Spanish</a>
+                <a href="{% url 'wines' %}?category=white&sort=country&direction=asc" class="dropdown-item">Country</a>
+                <a href="{% url 'wines' %}?category=white&sort=region&direction=asc" class="dropdown-item">Region</a>
+                <a href="{% url 'wines' %}?category=white&sort=winery&direction=asc" class="dropdown-item">Winery</a>
+                <a href="{% url 'wines' %}?category=white&sort=price&direction=asc" class="dropdown-item">Price</a>
+                <a href="{% url 'wines' %}?category=white&sort=year&direction=asc" class="dropdown-item">Year</a>
             </div>
         </li>
 
@@ -31,9 +33,11 @@
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="reds-link">
                 <a href="{% url 'wines' %}?category=red" class="dropdown-item">All Reds</a>
-                <a href="" class="dropdown-item">French</a>
-                <a href="" class="dropdown-item">Italian</a>
-                <a href="" class="dropdown-item">Spanish</a>
+                <a href="{% url 'wines' %}?category=red&sort=country&direction=asc" class="dropdown-item">Country</a>
+                <a href="{% url 'wines' %}?category=red&sort=region&direction=asc" class="dropdown-item">Region</a>
+                <a href="{% url 'wines' %}?category=red&sort=winery&direction=asc" class="dropdown-item">Winery</a>
+                <a href="{% url 'wines' %}?category=red&sort=price&direction=asc" class="dropdown-item">Price</a>
+                <a href="{% url 'wines' %}?category=red&sort=year&direction=asc" class="dropdown-item">Year</a>
             </div>
         </li>
 
@@ -44,9 +48,10 @@
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="rose-link">
                 <a href="{% url 'wines' %}?category=rose" class="dropdown-item">All Rose</a>
-                <a href="" class="dropdown-item">French</a>
-                <a href="" class="dropdown-item">Italian</a>
-                <a href="" class="dropdown-item">Spanish</a>
+                <a href="{% url 'wines' %}?category=rose&sort=region&direction=asc" class="dropdown-item">Region</a>
+                <a href="{% url 'wines' %}?category=rose&sort=winery&direction=asc" class="dropdown-item">Winery</a>
+                <a href="{% url 'wines' %}?category=rose&sort=price&direction=asc" class="dropdown-item">Price</a>
+                <a href="{% url 'wines' %}?category=rose&sort=year&direction=asc" class="dropdown-item">Year</a>
             </div>
         </li>
 
@@ -56,9 +61,10 @@
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="sparkling-link">
                 <a href="{% url 'wines' %}?category=sparkling" class="dropdown-item">All Sparkling &amp; Champanges</a>
-                <a href="" class="dropdown-item">French</a>
-                <a href="" class="dropdown-item">Italian</a>
-                <a href="" class="dropdown-item">Spanish</a>
+                <a href="{% url 'wines' %}?category=sparkling&sort=region&direction=asc" class="dropdown-item">Region</a>
+                <a href="{% url 'wines' %}?category=sparkling&sort=winery&direction=asc" class="dropdown-item">Winery</a>
+                <a href="{% url 'wines' %}?category=sparkling&sort=price&direction=asc" class="dropdown-item">Price</a>
+                <a href="{% url 'wines' %}?category=sparkling&sort=year&direction=asc" class="dropdown-item">Year</a>
             </div>
         </li>
 
