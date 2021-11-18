@@ -9,6 +9,22 @@ def all_wines(request):
 
     wines = Wine.objects.all()
     categories = None
+    sort = None
+    direction = None
+
+    if request.GET:
+        if 'sort' in request.GET:
+            sortkey = request.GET['sort']
+            sort = sortkey
+            if sortkey == 'name':
+                sortkey = 'lower_name'
+                wines = wines.annotate(lower_name=Lower('name'))
+
+            if 'direction' in request.GET:
+                direction = request.GET['direction']
+                if direction == 'desc':
+                    sortkey = f'-{sortkey}'
+            wines = wines.order_by(sortkey)
 
     if request.GET:
         if 'category' in request.GET:
@@ -16,9 +32,13 @@ def all_wines(request):
             wines = wines.filter(category__name__in=categories)
             categories = Category.objects.filter(name__in=categories)
 
+
+    current_sorting = f'{sort}_{direction}'
+
     context = {
         'wines': wines,
         'current_categories': categories,
+        'current_sorting': current_sorting,
     }
 
     return render(request, 'wines/wines.html', context)
@@ -43,6 +63,7 @@ def all_cases(request):
 
     context = {
         'cases': cases,
+
     }
 
     return render(request, 'wines/cases.html', context)

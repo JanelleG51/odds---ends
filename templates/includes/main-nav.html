@@ -5,10 +5,11 @@
                 All Wines
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-wines-link">
-                <a href="" class="dropdown-item">Country</a>
-                <a href="" class="dropdown-item ">By Price</a>
-                <a href="" class="dropdown-item ">By Rating</a>
                 <a href="{% url 'wines' %}" class="dropdown-item">All Wines</a>
+                <a href="{% url 'wines' %}?sort=country&direction=asc" class="dropdown-item">Country</a>
+                <a href="{% url 'wines' %}?sort=price&direction=asc" class="dropdown-item ">By Price</a>
+                <a href="{% url 'wines' %}?sort=rating&direction=desc" class="dropdown-item ">By Rating</a>
+                
             </div>
         </li>
 
@@ -67,9 +68,6 @@
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="cases-link">
                 <a href="{% url 'cases' %}" class="dropdown-item">All Cases</a>
-                <a href="" class="dropdown-item">Basic</a>
-                <a href="" class="dropdown-item">Premium</a>
-                <a href="" class="dropdown-item">Superior</a>
             </div>
         </li>
 
