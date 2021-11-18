@@ -17,7 +17,7 @@
                 White Wines
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="whites-link">
-                <a href="" class="dropdown-item">All Whites</a>
+                <a href="{% url 'wines' %}?category=white" class="dropdown-item">All Whites</a>
                 <a href="" class="dropdown-item">French</a>
                 <a href="" class="dropdown-item">Italian</a>
                 <a href="" class="dropdown-item">Spanish</a>
@@ -29,7 +29,7 @@
                 Red Wines
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="reds-link">
-                <a href="" class="dropdown-item">All Reds</a>
+                <a href="{% url 'wines' %}?category=red" class="dropdown-item">All Reds</a>
                 <a href="" class="dropdown-item">French</a>
                 <a href="" class="dropdown-item">Italian</a>
                 <a href="" class="dropdown-item">Spanish</a>
@@ -42,7 +42,7 @@
                 Rose Wines
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="rose-link">
-                <a href="" class="dropdown-item">All Rose</a>
+                <a href="{% url 'wines' %}?category=rose" class="dropdown-item">All Rose</a>
                 <a href="" class="dropdown-item">French</a>
                 <a href="" class="dropdown-item">Italian</a>
                 <a href="" class="dropdown-item">Spanish</a>
@@ -54,7 +54,7 @@
                Sparkling & Champanges
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="sparkling-link">
-                <a href="" class="dropdown-item">All Sparkling &amp; Champanges</a>
+                <a href="{% url 'wines' %}?category=sparkling" class="dropdown-item">All Sparkling &amp; Champanges</a>
                 <a href="" class="dropdown-item">French</a>
                 <a href="" class="dropdown-item">Italian</a>
                 <a href="" class="dropdown-item">Spanish</a>
