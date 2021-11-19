@@ -23,10 +23,35 @@
                             <img class="card-img-top img-fluid" src="/media/noimage.png" alt="{{ case.name }}">
                         </a>
                     {% endif %}
+                    <p class="mt-3">{{ case.name }}</p>
+                    <form class="form" action="{% url 'add_to_bag' case.id %}" method="POST">
+                        {% csrf_token %}
+                        <div class="form-row">
+                            <div class="col-12">
+                                <p class="mt-3"><strong>Quantity:</strong></p>
+                                <div class="form-group w-50">
+                                    <div class="input-group">
+                                        <input class="form-control qty_input" type="number" name="quantity" value="1" min="1" max="99" data-item_id="{{ case.id }}" id="id_qty_{{ case.id }}">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <a href="{% url 'cases' %}" class="btn btn-outline-black rounded-0 mt-5">
+                                    <span class="icon">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="text-uppercase">Keep Shopping</span>
+                                </a>
+                                <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="Add to Bag">
+                            </div>
+                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                        </div>
+                    </form>
                 </div>
             </div>
             <div class="col-12 col-md-6 col-lg-4">
-                <div class="product-details-container mb-5 mt-md-5">
+                <div class="mb-5 mt-md-5">
                     <p class="mb-0">{{ case.name }}</p>
                     <p class="lead mb-0 text-left font-weight-bold">£{{ case.price }}</p>
                 </div>
