@@ -19,7 +19,8 @@ def all_wines(request):
             if sortkey == 'name':
                 sortkey = 'lower_name'
                 wines = wines.annotate(lower_name=Lower('name'))
-
+            if sortkey == 'category':
+                sortkey = 'category__name'
             if 'direction' in request.GET:
                 direction = request.GET['direction']
                 if direction == 'desc':

@@ -19,7 +19,37 @@
         </div>
         <div class="row">
             <div class="product-container col-10 offset-1">
-                <div class="row mt-1 mb-2"></div>
+                <div class="row mt-1 mb-2">
+                    <div class="col-12 col-md-6 my-auto order-md-last d-flex justify-content-center justify-content-md-end">
+                        <div class="sort-select-wrapper w-50">
+                            <select id="sort-selector" class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
+                                <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
+                                <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
+                                <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)</option>
+                                <option value="rating_asc" {% if current_sorting == 'rating_asc' %}selected{% endif %}>Rating (low to high)</option>
+                                <option value="rating_desc" {% if current_sorting == 'rating_desc' %}selected{% endif %}>Rating (high to low)</option>
+                                <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name (A-Z)</option>
+                                <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name (Z-A)</option>
+                                <option value="country_asc" {% if current_sorting == 'country_asc' %}selected{% endif %}>Country (A-Z)</option>
+                                <option value="country_desc" {% if current_sorting == 'country_desc' %}selected{% endif %}>Country (Z-A)</option>
+                                <option value="region_asc" {% if current_sorting == 'region_asc' %}selected{% endif %}>Region (A-Z)</option>
+                                <option value="region_desc" {% if current_sorting == 'region_desc' %}selected{% endif %}>Region (Z-A)</option>
+                                <option value="winery_asc" {% if current_sorting == 'winery_asc' %}selected{% endif %}>Winery (A-Z)</option>
+                                <option value="winery_desc" {% if current_sorting == 'winery_desc' %}selected{% endif %}>Winery (Z-A)</option>
+                                <option value="year_asc" {% if current_sorting == 'year_asc' %}selected{% endif %}>Year (earliet to latest)</option>
+                                <option value="year_desc" {% if current_sorting == 'year_desc' %}selected{% endif %}>Year (latest to earliet)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 order-md-first">
+                        <p class="text-muted mt-3 text-center text-md-left">
+                            {% if search_term or current_categories or current_sorting != 'None_None' %}
+                                <span class="small"><a href="{% url 'wines' %}">All Wines</a> | </span>
+                            {% endif %}
+                            {{ wines|length }} Wines{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
+                        </p>
+                    </div>
+                </div>
                 <div class="row">
                     {% for wine in wines %}
                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
