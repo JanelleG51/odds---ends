@@ -112,5 +112,10 @@
         </div>
 
     </div>
+
 {% endblock %}
 
+{% block postloadjs %}
+{{ block.super }}  
+    <script src="{% static 'wines/js/sorting.js' %}"></script>
+{% endblock %}

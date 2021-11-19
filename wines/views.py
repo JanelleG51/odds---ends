@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Wine, Case, Category
+from django.db.models.functions import Lower
 
 # Create your views here.
 
