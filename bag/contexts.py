@@ -15,10 +15,10 @@ def bag_contents(request):
         if isinstance(item_data, int):
             case = get_object_or_404(Case, pk=item_id)
             total += item_data * case.price
-            case_count += quantity
+            case_count += item_data
             bag_items.append({
                 'item_id': item_id,
-                'quantity': quantity,
+                'quantity': item_data,
                 'case': case,
             })
         else:
