@@ -8,6 +8,7 @@
             "name": "Basic",
             "price": 95.00,
             "image": "noimage.png",
+            "case_options": "True",
             "category": 5
         }
     },
@@ -19,6 +20,7 @@
             "name": "Premium",
             "price": 150.00,
             "image": "noimage.png",
+            "case_options": "True",
             "category": 6
         }
     },
@@ -30,6 +32,7 @@
             "name": "Superior",
             "price": 200.00,
             "image": "noimage.png",
+            "case_options": "True",
             "category": 7
         }
     }
