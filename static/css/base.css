@@ -11,5 +11,8 @@ body {
     padding-top: 25px;
 }
 
-
+.update-link,
+.remove-item {
+    cursor: pointer;
+}
 
