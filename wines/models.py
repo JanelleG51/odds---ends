@@ -42,7 +42,7 @@ class Case(models.Model):
     sku = models.CharField(max_length=254, null=True, blank=True)
     name = models.CharField(max_length=254)
     price = models.DecimalField(max_digits=6, decimal_places=2)
-    case_options = models.BooleanField(default=True, null=False, blank=False)
+    has_type = models.BooleanField(default=False, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
 
     def __str__(self):
