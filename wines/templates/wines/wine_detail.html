@@ -15,8 +15,8 @@
             <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
                 <div class="image-container my-5">
                     {% if wine.image %}
-                        <a href="" target="_blank">
-                            <img class="card-img-top img-fluid" src="/media/r001.jpg" alt="{{ wine.name }}">
+                        <a href="">
+                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}{{ wine.image }}" alt="{{ wine.name }}">
                         </a>
                         {% else %}
                         <a href="">

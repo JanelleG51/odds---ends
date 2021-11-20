@@ -54,13 +54,14 @@
                     {% for wine in wines %}
                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                             <div class="card h-100 border-0">
+                                
                                 {% if wine.image %}
                                 <a href="{% url 'wine_detail' wine.id %}">
-                                    <img class="card-img-top img-fluid" src="/media/r001.jpg" alt="{{ wine.name }}">
+                                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}{{ wine.image }}" alt="{{ wine.name }}">
                                 </a>
                                 {% else %}
                                 <a href="{% url 'wine_detail' wine.id %}">
-                                    <img src="/media/noimage.png" class="card-img img-fluid" alt="{{ wine.name }}">
+                                    <img src="{{ MEDIA_URL }}noimage.png" class="card-img img-fluid" alt="{{ wine.name }}">
                                 </a>
                                 {% endif %}
                                 <div class="card-body pb-0">
