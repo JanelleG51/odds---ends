@@ -35,23 +35,23 @@
                         </tr>
                     </thead>
 
-                    {% for case in bag_items %}
+                    {% for item in bag_items %}
                     <tr>
                         <td class="p-3 w-25">
                             <img class="img-fluid rounded" src="/media/noimage.png" alt="{{ case.name }}">
                         </td>
                         <td class="py-3">
-                            <p class="my-0"><strong>{{ case.name }}</strong></p>
-                            <p class="my-0 small text-muted">SKU: {{ case.sku|upper }}</p>
+                            <p class="my-0"><strong>{{ item.case.name }}</strong></p>
+                            <p class="my-0 small text-muted">SKU: {{ item.case.sku|upper }}</p>
                         </td>
                         <td class="py-3">
-                            <p class="my-0">£{{ case.price }}</p>
+                            <p class="my-0">£{{ item.case.price }}</p>
                         </td>
                         <td class="py-3 w-25">
-                            <p class="my-0">{{ case.quantity }}</p>
+                            <p class="my-0">{{ item.quantity }}</p>
                         </td>
                         <td class="py-3">
-                            <p class="my-0">£{{ case.price }}</p>
+                            <p class="my-0">£{{ item.case.price }}</p>
                         </td>
                     </tr>
                     {% endfor %}

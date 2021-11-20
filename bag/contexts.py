@@ -11,12 +11,12 @@ def bag_contents(request):
     case_count = 0
     bag = request.session.get('bag', {})
 
-    for case_id, quantity in bag.items():
-        case = get_object_or_404(Case, pk=case_id)
+    for item_id, quantity in bag.items():
+        case = get_object_or_404(Case, pk=item_id)
         total += quantity * case.price
         case_count += quantity
         bag_items.append({
-            'case_id': case_id,
+            'item_id': item_id,
             'quantity': quantity,
             'case': case,
         })
