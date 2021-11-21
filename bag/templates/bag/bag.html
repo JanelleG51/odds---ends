@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load bag_tools %}
 
 {% block page_header %}
 <div class="container">
@@ -83,7 +84,7 @@
                             <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}" data-case_type="{{ item.type }}"><small>Remove</small></a>
                         </td>
                         <td class="py-3">
-                            <p class="my-0">£{{ item.case.price }}</p>
+                            <p class="my-0">£{{ item.case.price | calc_subtotal:item.quantity }}</p>
                         </td>
                     </tr>
                     {% endfor %}
@@ -128,6 +129,6 @@
 {% endblock %}
 
 {% block postloadjs %}
-{{ block.super }}  
+{{ block.super }}
     <script src="{% static 'wines/js/quantity.js' %}"></script>
 {% endblock %}

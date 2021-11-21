@@ -52,7 +52,9 @@ $('.remove-item').click(function(e) {
     var itemId = $(this).attr('id').split('remove_')[1];
     var type = $(this).data('case_type');
     var url = `/bag/remove/${itemId}/`;
-    var data = {'csrfmiddlewaretoken': csrfToken, 'case_type': type};
+    var data = {
+        'csrfmiddlewaretoken': csrfToken, 'case_type': type
+    };
 
     $.post(url, data)
      .done(function() {
