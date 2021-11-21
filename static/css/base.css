@@ -11,8 +11,19 @@ body {
     padding-top: 25px;
 }
 
+.btt-link,
 .update-link,
 .remove-item {
     cursor: pointer;
 }
+
+.btt-button {
+    height: 42px;
+    width: 42px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
+
+
 
