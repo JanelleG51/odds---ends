@@ -1,4 +1,7 @@
 from django.shortcuts import render, redirect, reverse, HttpResponse
+from django.contrib import messages
+
+from wines.models import Case
 
 # Create your views here.
 
@@ -10,8 +13,9 @@ def view_bag(request):
 
 
 def add_to_bag(request, case_id):
-    """ Add a quantity of the specified product to the shopping bag """
+    """ Add a quantity of the specified case to the shopping bag """
 
+    case = Case.objects.get(pk=case_id)
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
     type = None
@@ -33,6 +37,7 @@ def add_to_bag(request, case_id):
             bag[case_id] += quantity
         else:
             bag[case_id] = quantity
+            message.success(request, f'Added {case.name} case to your bag')
 
     request.session['bag'] = bag
     return redirect(redirect_url)
