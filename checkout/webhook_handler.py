@@ -2,7 +2,7 @@ import json
 import time
 
 from .models import Order, OrderLineItem
-from wine.models import Case
+from wines.models import Case
 
 from django.http import HttpResponse
 
@@ -77,7 +77,7 @@ class StripeWH_Handler:
                     original_bag=bag,
                     stripe_pid=pid,
                 )
-                for item_id, item_data in json.loads(bag).items():
+                for case_id, item_data in json.loads(bag).items():
                     case = Case.objects.get(id=case_id)
                     if isinstance(item_data, int):
                         order_line_item = OrderLineItem(
