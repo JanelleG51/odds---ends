@@ -64,12 +64,12 @@
                 {% for item in order.lineitems.all %}
                 <div class="row">
                     <div class="col-12 col-md-4">
-                        <p class="small mb-0 text-black font-weight-bold">
+                        <p class="small mb-0 font-weight-bold">
                             {{ item.case.name }}{% if item.has_type %} - Type {{ item.case.type|upper }}{% endif %}
                         </p>
                     </div>
                     <div class="col-12 col-md-8 text-md-right">
-                        <p class="small mb-0">{{ item.quantity }} @ ${{ item.case.price }} each</p>
+                        <p class="small mb-0">{{ item.quantity }} @ £{{ item.case.price }} each</p>
                     </div>
                 </div>
                 {% endfor %}
@@ -82,7 +82,7 @@
 
                 <div class="row">
                     <div class="col-12 col-md-4">
-                        <p class="mb-0 text-black font-weight-bold">Full Name</p>
+                        <p class="mb-0 font-weight-bold">Full Name</p>
                     </div>
                     <div class="col-12 col-md-8 text-md-right">
                         <p class="mb-0">{{ order.full_name }}</p>
@@ -132,7 +132,7 @@
                 {% if order.postcode %}
                 <div class="row">
                     <div class="col-12 col-md-4">
-                        <p class="mb-0 text-black font-weight-bold">Postal Code</p>
+                        <p class="mb-0 text-black font-weight-bold">Post Code</p>
                     </div>
                     <div class="col-12 col-md-8 text-md-right">
                         <p class="mb-0">{{ order.postcode }}</p>
@@ -169,7 +169,7 @@
                         <p class="mb-0 text-black font-weight-bold">Order Total</p>
                     </div>
                     <div class="col-12 col-md-8 text-md-right">
-                        <p class="mb-0">{{ order.order_total }}</p>
+                        <p class="mb-0">£{{ order.order_total }}</p>
                     </div>
                 </div>
 
@@ -178,7 +178,7 @@
                         <p class="mb-0 text-black font-weight-bold">Delivery</p>
                     </div>
                     <div class="col-12 col-md-8 text-md-right">
-                        <p class="mb-0">{{ order.delivery_cost }}</p>
+                        <p class="mb-0">£{{ order.delivery_cost }}</p>
                     </div>
                 </div>
 
@@ -187,7 +187,7 @@
                         <p class="mb-0 text-black font-weight-bold">Grand Total</p>
                     </div>
                     <div class="col-12 col-md-8 text-md-right">
-                        <p class="mb-0">{{ order.grand_total }}</p>
+                        <p class="mb-0">£{{ order.grand_total }}</p>
                     </div>
                 </div>
             </div>
