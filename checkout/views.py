@@ -1,15 +1,13 @@
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.conf import settings
 
-from .forms import OrderForm
-from .models import Order, OrderLineItem
-from wines.models import Case
-from bag.contexts import bag_contents
-
 import stripe
 
-# Create your views here.
+from wines.models import Case
+from bag.contexts import bag_contents
+from .forms import OrderForm
+from .models import Order, OrderLineItem
 
 
 def checkout(request):
@@ -34,7 +32,7 @@ def checkout(request):
         order_form = OrderForm(form_data)
         if order_form.is_valid():
             order = order_form.save()
-            for item_id, item_data in bag.items():
+            for case_id, item_data in bag.items():
                 try:
                     case = Case.objects.get(id=case_id)
                     if isinstance(item_data, int):
@@ -55,7 +53,7 @@ def checkout(request):
                             order_line_item.save()
                 except Case.DoesNotExist:
                     messages.error(request, (
-                        "One of the cases in your bag wasn't found in our database. "
+                        "One of the cases in your bag wasn't found in our database."
                         "Please call us for assistance!")
                     )
                     order.delete()
@@ -70,7 +68,8 @@ def checkout(request):
     else:
         bag = request.session.get('bag', {})
         if not bag:
-            messages.error(request, "There's nothing in your bag at the moment")
+            messages.error(
+                request, "There's nothing in your bag at the moment")
             return redirect(reverse('cases'))
 
     current_bag = bag_contents(request)
@@ -95,6 +94,25 @@ def checkout(request):
         'order_form': order_form,
         'stripe_public_key': stripe_public_key,
         'client_secret': intent.client_secret,
+    }
+
+    return render(request, template, context)
+
+
+def checkout_success(request, order_number):
+
+    save_info = request.session.get('save_info')
+    order = get_object_or_404(Order, order_number=order_number)
+    messages.success(request, f'Order successfully processed! \
+        Your order number is {order_number}. A confirmation \
+        email will be sent to {order.email}.')
+
+    if 'bag' in request.session:
+        del request.session['bag']
+
+    template = 'checkout/checkout_success.html'
+    context = {
+        'order': order,
     }
 
     return render(request, template, context)
