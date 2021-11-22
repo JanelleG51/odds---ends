@@ -27,3 +27,20 @@ var style = {
 };
 var card = elements.create('card', {style: style});
 card.mount('#card-element');
+
+// Handle card validation errors
+
+card.addEventListener('change', function (event) {
+    var errorDiv = document.getElementById('card-errors');
+    if (event.error) {
+        var html = `
+            <span role="alert">
+                <i class="fas fa-exclamation-circle"></i>
+            </span>
+            <span><strong>${event.error.message}</strong></span>
+            `;
+        $(errorDiv).html(html);
+    } else {
+        errorDiv.textContent = '';
+    }
+});
