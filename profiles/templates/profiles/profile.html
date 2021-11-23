@@ -7,22 +7,36 @@
 {% endblock %}
 
 {% block page_header %}
-    <div class="container">
-        <div class="row">
-            <div class="col">
-            </div>
+<div class="container">
+    <div class="row">
+        <div class="col">
         </div>
     </div>
+</div>
 {% endblock %}
 
 {% block content %}
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <hr>
-                <h2 class="mb-4">My Profile</h2>
-            </div>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <hr>
+            <h2 class="mb-4">My Profile</h2>
         </div>
     </div>
-    {{ profile }}
+
+    <div class="row">
+        <div class="col-12 col-lg-6">
+            <p class="text-muted">Default Delivery Information</p>
+            <form class="mt-3" action="{% url 'profile' %}" method="POST" id="profile-update-form">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <button class="btn btn-black rounded-0 text-uppercase float-right">Update Information</button>
+            </form>
+        </div>
+        <div class="col-12 col-lg-6">
+            <p class="text-muted">Order History</p>
+            {{ orders }}
+        </div>
+    </div>
+</div>
 {% endblock %}
