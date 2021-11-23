@@ -1,7 +1,7 @@
 .StripeElement,
 .stripe-style-input {
   box-sizing: border-box;
-  height: 40px;
+  height: 42px;
   padding: 10px 12px;
   border: 1px solid;
   border-radius: 0px;
@@ -34,6 +34,16 @@
 #card-element {
     color: #000;
     border: 1px solid #000;
+}
+
+select,
+select option {
+    color: #000000;
+}
+
+select:invalid,
+select option[value=""] {
+    color: #aab7c4 !important;
 }
 
 #loading-overlay {
