@@ -1,4 +1,5 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.contrib import messages
 from .models import Wine, Case, Category
 from django.db.models.functions import Lower
 
@@ -86,7 +87,18 @@ def case_detail(request, case_id):
 
 def add_wine(request):
     """ Add a wines to the store """
-    form = WineForm()
+    if request.method == 'POST':
+        form = WineForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Wine succesfully added!')
+            return redirect(reverse('add_wine'))
+        else:
+            messages.error(
+                request, 'Failed to add wine. Please ensure the form is valid.')
+    else:
+        form = WineForm()
+
     template = 'wines/add_wine.html'
     context = {
         'form': form,
@@ -97,7 +109,17 @@ def add_wine(request):
 
 def add_case(request):
     """ Add a cases to the store """
-    form = CaseForm()
+    if request.method == 'POST':
+        form = CaseForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Case succesfully added!')
+            return redirect(reverse('add_case'))
+        else:
+            messages.error(
+                request, 'Failed to add case. Please ensure the form is valid.')
+    else:
+        form = CaseForm()
     template = 'wines/add_case.html'
     context = {
         'form': form,
