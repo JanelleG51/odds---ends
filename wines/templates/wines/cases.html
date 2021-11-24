@@ -41,6 +41,12 @@
                                 <div class="row">
                                     <div class="col">
                                         <p class="lead mb-0 text-left">£{{ case.price }}</p>
+                                        {% if request.user.is_superuser %}
+                                                <small class="ml-3">
+                                                    <a href="{% url 'edit_case' case.id %}">Edit</a> | 
+                                                    <a class="text-danger" href="{% url 'delete_case' case.id %}">Delete</a>
+                                                </small>
+                                            {% endif %}
                                     </div>
                                 </div>
                             </div>

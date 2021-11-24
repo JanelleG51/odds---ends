@@ -10,4 +10,6 @@ urlpatterns = [
     path('add_case/', views.add_case, name='add_case'),
     path('edit_case/<int:case_id>/', views.edit_case, name='edit_case'),
     path('edit_wine/<int:wine_id>/', views.edit_wine, name='edit_wine'),
+    path('delete_case/<int:case_id>/', views.delete_case, name='delete_case'),
+    path('delete_wine/<int:wine_id>/', views.delete_wine, name='delete_wine'),
 ]
