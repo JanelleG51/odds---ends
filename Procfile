@@ -1,1 +1,1 @@
-web: gunicorn odds-and-ends.wsgi.application
+web: gunicorn odds_and_ends.wsgi:application
