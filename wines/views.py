@@ -2,6 +2,8 @@ from django.shortcuts import render, get_object_or_404
 from .models import Wine, Case, Category
 from django.db.models.functions import Lower
 
+from .forms import WineForm, CaseForm
+
 # Create your views here.
 
 
@@ -80,3 +82,25 @@ def case_detail(request, case_id):
     }
 
     return render(request, 'wines/case_detail.html', context)
+
+
+def add_wine(request):
+    """ Add a wines to the store """
+    form = WineForm()
+    template = 'wines/add_wine.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)
+
+
+def add_case(request):
+    """ Add a cases to the store """
+    form = CaseForm()
+    template = 'wines/add_case.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)
