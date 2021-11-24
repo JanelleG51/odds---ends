@@ -7,7 +7,7 @@
             "sku": "bsc00001",
             "name": "Basic",
             "price": 95.00,
-            "image": "noimage.png",
+            "image": "case_basic.jpg",
             "category": 5
         }
     },
@@ -18,7 +18,7 @@
             "sku": "prm00002",
             "name": "Premium",
             "price": 150.00,
-            "image": "noimage.png",
+            "image": "case_premium.jpg",
             "category": 6
         }
     },
@@ -29,7 +29,7 @@
             "sku": "spr00003",
             "name": "Superior",
             "price": 200.00,
-            "image": "noimage.png",
+            "image": "case_superior.jpg",
             "category": 7
         }
     }

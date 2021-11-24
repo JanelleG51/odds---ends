@@ -26,13 +26,13 @@
                     <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                         <div class="card h-100 border-0">
                             {% if case.image %}
-                            <a href="{% url 'case_detail' case.id %}">
-                                <img class="card-img-top img-fluid" src="/media/noimage.png" alt="{{ case.name }}">
-                            </a>
+                                <a href="{% url 'case_detail' case.id %}">
+                                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}{{ case.image }}" alt="{{ case.name }}">
+                                </a>
                             {% else %}
-                            <a href="{% url 'case_detail' case.id %}">
-                                <img src="/media/noimage.png" class="card-img img-fluid" alt="{{ case.name }}">
-                            </a>
+                                <a href="{% url 'case_detail' case.id %}">
+                                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ case.name }}">
+                                </a>
                             {% endif %}
                             <div class="card-body pb-0">
                                 <p class="mb-0">{{ case.name }}</p>

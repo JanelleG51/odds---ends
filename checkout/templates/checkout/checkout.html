@@ -43,9 +43,9 @@
                 <div class="col-2 mb-1">
                     <a href="{% url 'case_detail' item.case.id %}">
                         {% if item.case.image %}
-                        <img class="w-100" src="/media/noimage.png" alt="{{ case.name }}">
+                        <img class="w-100" src="{{ MEDIA_URL }}{{ item.case.image }}" alt="{{ case.name }}">
                         {% else %}
-                        <img class="w-100" src="/media/noimage.png" alt="{{ case.name }}">
+                        <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ case.name }}">
                         {% endif %}
                     </a>
                 </div>
@@ -91,7 +91,7 @@
                     {{ order_form.town_or_city | as_crispy_field }}
                     {{ order_form.county | as_crispy_field }}
                     {{ order_form.postcode | as_crispy_field }}
-                    {{ order_form.country | as_crispy_field }}  
+                    {{ order_form.country | as_crispy_field }}
                     <div class="form-check form-check-inline float-right mr-0">
                         {% if user.is_authenticated %}
                         <label class="form-check-label" for="id-save-info">Save this delivery information to my
@@ -106,7 +106,7 @@
                         {% endif %}
                     </div>
                 </fieldset>
-                <fieldset class="px-3"> 
+                <fieldset class="px-3">
                     <legend class="fieldset-label small text-black px-2 w-auto">Payment</legend>
                     <!-- A Stripe card element will go here -->
                     <div class="mb-3" id="card-element">
@@ -152,8 +152,8 @@
 {% endblock %}
 
 {% block postloadjs %}
-    {{ block.super }}
-    {{ stripe_public_key|json_script:"id_stripe_public_key" }}
-    {{ client_secret|json_script:"id_client_secret" }}
-    <script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
+{{ block.super }}
+{{ stripe_public_key|json_script:"id_stripe_public_key" }}
+{{ client_secret|json_script:"id_client_secret" }}
+<script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
 {% endblock %}

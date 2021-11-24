@@ -64,7 +64,7 @@ def adjust_bag(request, case_id):
         if quantity > 0:
             bag[case_id]['items_by_type'][type] = quantity
             messages.success(
-                request, f'Updated case {type.upper()} {case.name} quantity to {bag[case_id]["items_by_type"][type]}')
+                request, f'Updated {type.upper()} {case.name} case quantity to {bag[case_id]["items_by_type"][type]}')
         else:
             del bag[case_id]['items_by_type'][type]
             if not bag[case_id]['items_by_type']:

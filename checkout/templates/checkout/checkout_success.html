@@ -64,7 +64,7 @@
                 {% for item in order.lineitems.all %}
                 <div class="row">
                     <div class="col-12 col-md-4">
-                        <p class="my-0"><strong>{{ item.case.name }}</strong>{% if item.case.has_type %}{{ item.type|upper }}{% endif %}</p>
+                        <p class="my-0"><strong>{{ item.case.name }}</strong>{% if item.case.has_type %}{{ item.case.type|upper }}{% endif %}</p>
                     </p>
                     </div>
                     <div class="col-12 col-md-8 text-md-right">
