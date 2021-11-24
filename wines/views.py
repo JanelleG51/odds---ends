@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from .models import Wine, Case, Category
 from django.db.models.functions import Lower
 
@@ -85,8 +86,13 @@ def case_detail(request, case_id):
     return render(request, 'wines/case_detail.html', context)
 
 
+@login_required
 def add_wine(request):
     """ Add a wines to the store """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, you do not have permissions to do that.')
+        return redirect(reverse('home'))
+
     if request.method == 'POST':
         form = WineForm(request.POST, request.FILES)
         if form.is_valid():
@@ -107,8 +113,13 @@ def add_wine(request):
     return render(request, template, context)
 
 
+@login_required
 def add_case(request):
     """ Add a cases to the store """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, you do not have permissions to do that.')
+        return redirect(reverse('home'))
+
     if request.method == 'POST':
         form = CaseForm(request.POST, request.FILES)
         if form.is_valid():
@@ -128,8 +139,12 @@ def add_case(request):
     return render(request, template, context)
 
 
+@login_required
 def edit_case(request, case_id):
     """ Edit a case in the store """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, you do not have permissions to do that.')
+        return redirect(reverse('home'))
 
     case = get_object_or_404(Case, pk=case_id)
     if request.method == 'POST':
@@ -154,8 +169,12 @@ def edit_case(request, case_id):
     return render(request, template, context)
 
 
+@login_required
 def edit_wine(request, wine_id):
     """ Edit a wine in the store """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, you do not have permissions to do that.')
+        return redirect(reverse('home'))
 
     wine = get_object_or_404(Wine, pk=wine_id)
     if request.method == 'POST':
@@ -180,8 +199,12 @@ def edit_wine(request, wine_id):
     return render(request, template, context)
 
 
+@login_required
 def delete_wine(request, wine_id):
     """ Delete a wine from the store """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, you do not have permissions to do that.')
+        return redirect(reverse('home'))
 
     wine = get_object_or_404(Wine, pk=wine_id)
     wine.delete()
@@ -189,8 +212,12 @@ def delete_wine(request, wine_id):
     return redirect(reverse('wines'))
 
 
+@login_required
 def delete_case(request, case_id):
     """ Delete a case from the store """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, you do not have permissions to do that.')
+        return redirect(reverse('home'))
 
     case = get_object_or_404(Case, pk=case_id)
     case.delete()
