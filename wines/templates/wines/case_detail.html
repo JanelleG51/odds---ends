@@ -23,7 +23,7 @@
                             <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ case.name }}">
                         </a>
                     {% endif %}
-                <p class="mt-3">{{ case.name }}</p>
+                <p class="mt-3">{{ case.category.friendly_name }}</p>
                 <form class="form" action="{% url 'add_to_bag' case.id %}" method="POST">
                     {% csrf_token %}
                     <div class="form-row">
@@ -83,7 +83,7 @@
         </div>
         <div class="col-12 col-md-6 col-lg-4">
             <div class="mb-5 mt-md-5">
-                <p class="mb-0">{{ case.name }}</p>
+                <p class="mb-0">{{ case.category.friendly_name }}</p>
                 <p class="lead mb-0 text-left font-weight-bold">£{{ case.price }}</p>
             </div>
         </div>
