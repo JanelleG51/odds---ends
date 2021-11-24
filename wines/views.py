@@ -126,3 +126,55 @@ def add_case(request):
     }
 
     return render(request, template, context)
+
+
+def edit_case(request, case_id):
+    """ Edit a case in the store """
+
+    case = get_object_or_404(Case, pk=case_id)
+    if request.method == 'POST':
+        form = CaseForm(request.POST, request.FILES, instance=case)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Case successfully updated!')
+            return redirect(reverse('case_detail', args=[case.id]))
+        else:
+            messages.error(
+                request, 'Failed to update case. Please ensure the form is valid.')
+    else:
+        form = CaseForm(instance=case)
+        messages.info(request, f'You are editing the {case.name} case')
+
+    template = 'wines/edit_case.html'
+    context = {
+        'form': form,
+        'case': case,
+    }
+
+    return render(request, template, context)
+
+
+def edit_wine(request, wine_id):
+    """ Edit a wine in the store """
+
+    wine = get_object_or_404(Wine, pk=wine_id)
+    if request.method == 'POST':
+        form = WineForm(request.POST, request.FILES, instance=wine)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Wine successfully updated!')
+            return redirect(reverse('wine_detail', args=[wine.id]))
+        else:
+            messages.error(
+                request, 'Failed to update wine. Please ensure the form is valid.')
+    else:
+        form = WineForm(instance=wine)
+        messages.info(request, f'You are editing {wine.name}')
+
+    template = 'wines/edit_wine.html'
+    context = {
+        'form': form,
+        'wine': wine,
+    }
+
+    return render(request, template, context)
