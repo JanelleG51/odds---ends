@@ -1,0 +1,13 @@
+Dear Odds & Ends Team,
+
+{% if contact.contact_as == 'win' %} 
+An winery has contacted you:
+{% else %}
+A customer has contacted you:
+{% endif %}
+
+"{{ contact.message }}"
+
+Please have a read of the message and get back to {{ contact.name }} at {{ contact.email }} as soon as you can.
+
+Thank you!

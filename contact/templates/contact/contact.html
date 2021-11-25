@@ -13,8 +13,9 @@
                 <div class="col-12 col-lg-5 mt-3">
                     <p class="mb-4">Whether you're a customer or a winery or seller, please fill in the form below to contact us!</p>
                     <form action="{% url 'contact' %}" method="POST">
-                        
-                        <button id="submit-button" class="btn">Send</button>
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        <button class="btn">Send</button>
                     </form>
                 </div>
             </div>
