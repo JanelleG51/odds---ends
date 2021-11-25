@@ -32,7 +32,8 @@ def contact(request):
             cust_email,
             [settings.DEFAULT_FROM_EMAIL]
         )
-        messages.success(request, 'Ypur message has been sent! We will get back to you as soon as possible.')
+        messages.success(
+            request, 'Your message has been sent! We will get back to you as soon as possible.')
 
     form = ContactForm
 
