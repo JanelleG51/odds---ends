@@ -60,34 +60,34 @@
           <ul class="list-inline list-unstyled text-right">
             <!-- User profile dropdown -->
             <li class="list-inline-item dropdown">
-              <a class="nav-link mr-4" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true"
+              <a class="nav-link mr-4 text-red" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true"
                 aria-expanded="false">
                 <div class="text-center">
-                  <div><i class="far fa-user fa-lg"></i></div>
+                  <div><i class="fas fa-glass-cheers fa-lg"></i></div>
                   <p>My Account</p>
                 </div>
               </a>
               <div class="dropdown-menu" aria-labelledby="user-options">
                 {% if request.user.is_authenticated %}
                 {% if request.user.is_superuser %}
-                <a href="{% url 'add_wine' %}" class="dropdown-item">Add Wine</a>
-                <a href="{% url 'add_case' %}" class="dropdown-item">Add Case</a>
+                <a href="{% url 'add_wine' %}" class="dropdown-item text-red">Add Wine</a>
+                <a href="{% url 'add_case' %}" class="dropdown-item text-red">Add Case</a>
                 {% endif %}
-                <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
-                <a href="{% url 'account_logout' %}" class="dropdown-item">Sign Out</a>
+                <a href="{% url 'profile' %}" class="dropdown-item text-red">My Profile</a>
+                <a href="{% url 'account_logout' %}" class="dropdown-item text-red">Sign Out</a>
                 {% else %}
-                <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                <a href="{% url 'account_login' %}" class="dropdown-item">Sign In</a>
+                <a href="{% url 'account_signup' %}" class="dropdown-item text-red">Register</a>
+                <a href="{% url 'account_login' %}" class="dropdown-item text-red">Sign In</a>
                 {% endif %}
               </div>
             </li>
             <!-- Bag link -->
             <li class="list-inline-item">
-              <a class="{% if bag_items %}font-weight-bold{% else %}font-weight-normal{% endif %} nav-link"
+              <a class="{% if bag_items %}font-weight-bold{% else %}font-weight-normal{% endif %} nav-link text-red"
                 href="{% url 'view_bag' %}">
                 <div class="text-center">
                   <div>
-                    <i class="fas fa-shopping-bag fa-lg"></i>
+                    <i class="fas fa-wine-bottle fa-lg"></i>
                   </div>
                   <p>
                     {% if bag_items %}
@@ -151,10 +151,10 @@
           <div class="col-12 md-4">
             <p>Customer Care</p>
             <ul class="list-unstyled">
-              <li><a href="{% url 'contact' %}">Contact Us</a></li>
-              <li><a href="">FAQ's</a></li>
-              <li><a href="">Shipping & Handling</a></li>
-              <li><a href="">Returns</a></li>
+              <li><a class="text-red" href="{% url 'contact' %}">Contact Us</a></li>
+              <li><a class="text-red" href="">FAQ's</a></li>
+              <li><a class="text-red" href="">Shipping & Handling</a></li>
+              <li><a class="text-red" href="">Returns</a></li>
             </ul>
           </div>
         </div>
@@ -165,13 +165,13 @@
             <p>Account</p>
             <ul class="list-unstyled">
               {% if request.user.is_authenticated %}
-              <li><a href="{% url 'profile' %}" class="dropdown-item">My Profile</a></li>
-              <li><a href="{% url 'account_logout' %}" class="dropdown-item">Sign Out</a></li>
+              <li><a href="{% url 'profile' %}" class="text-red">My Profile</a></li>
+              <li><a href="{% url 'account_logout' %}" class="text-red">Sign Out</a></li>
               {% else %}
-              <li><a href="{% url 'account_signup' %}" class="dropdown-item">Register</a></li>
-              <li><a href="{% url 'account_login' %}" class="dropdown-item">Sign In</a></li>
+              <li><a href="{% url 'account_signup' %}" class="text-red">Register</a></li>
+              <li><a href="{% url 'account_login' %}" class="text-red">Sign In</a></li>
               {% endif %}
-              <li><a href="{% url 'view_bag' %}">Bag</a></li>
+              <li><a href="{% url 'view_bag' %}" class="text-red">Bag</a></li>
             </ul>
           </div>
         </div>
@@ -181,11 +181,13 @@
           <div class="col-12 md-4">
             <p>Socials</p>
             <ul class="list-unstyled">
-              <li><a href="https://www.instagram.com/" target="_blank" title="Instagram link"
-                rel="noopener">Instagram</a></li>
-              <li><a href="https://www.facebook.com/" target="_blank" title="Facebook link" rel="noopener">Facebook</a>
+              <li><a class="text-red" href="https://www.instagram.com/" target="_blank" title="Instagram link"
+                  rel="noopener">Instagram</a></li>
+              <li><a class="text-red" href="https://www.facebook.com/" target="_blank" title="Facebook link"
+                  rel="noopener">Facebook</a>
               </li>
-              <li><a href="https://www.twitter.com/" target="_blank" title="Twitter link" rel="noopener">Twitter</a>
+              <li><a class="text-red" href="https://www.twitter.com/" target="_blank" title="Twitter link"
+                  rel="noopener">Twitter</a>
               </li>
             </ul>
           </div>
