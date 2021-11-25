@@ -6,13 +6,12 @@
 <head>
 
   {% block meta %}
-      <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="description" content="A site for wine lovers and those wanting to try something new">
-      <meta name="keywords"
-            content="">
-      <meta name="author" content="">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A site for wine lovers and those wanting to try something new">
+  <meta name="keywords" content="">
+  <meta name="author" content="">
   {% endblock %}
 
   {% block extra_meta %}
@@ -20,9 +19,9 @@
 
 
   {% block corecss %}
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-      <link rel="stylesheet" href="{% static 'css/base.css' %}">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'css/base.css' %}">
   {% endblock %}
 
 
@@ -30,16 +29,16 @@
   {% endblock %}
 
   {% block corejs %}
-      <script src="https://kit.fontawesome.com/bc244e029a.js" crossorigin="anonymous"></script>
-      <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-      </script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
-      </script>
-      <script src="https://js.stripe.com/v3/"></script>
+  <script src="https://kit.fontawesome.com/bc244e029a.js" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+  </script>
+  <script src="https://js.stripe.com/v3/"></script>
   {% endblock %}
 
   {% block extra_js %}
@@ -49,15 +48,15 @@
 </head>
 
 <body>
-  <div class="header-container">
-    <header class="container-fluid pt-2 pr-4 pl-3">
+  <div class="base-container">
+    <header class="container-fluid">
       <div class="row d-none d-lg-flex">
         <!-- Site logo -->
-        <div class="col-12 col-lg-6">
+        <div class="col-12 col-lg-6 mt-4">
           <a href="{% url 'home' %}" class="logo-text">Odds & Ends</a>
         </div>
-        
-        <div class="col-12 col-lg-6">
+
+        <div class="col-12 col-lg-6 mt-5">
           <ul class="list-inline list-unstyled text-right">
             <!-- User profile dropdown -->
             <li class="list-inline-item dropdown">
@@ -71,29 +70,30 @@
               <div class="dropdown-menu" aria-labelledby="user-options">
                 {% if request.user.is_authenticated %}
                 {% if request.user.is_superuser %}
-                    <a href="{% url 'add_wine' %}" class="dropdown-item">Add Wine</a>
-                    <a href="{% url 'add_case' %}" class="dropdown-item">Add Case</a>
+                <a href="{% url 'add_wine' %}" class="dropdown-item">Add Wine</a>
+                <a href="{% url 'add_case' %}" class="dropdown-item">Add Case</a>
                 {% endif %}
-                    <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
-                    <a href="{% url 'account_logout' %}" class="dropdown-item">Sign Out</a>
+                <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
+                <a href="{% url 'account_logout' %}" class="dropdown-item">Sign Out</a>
                 {% else %}
-                    <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                    <a href="{% url 'account_login' %}" class="dropdown-item">Sign In</a>
+                <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                <a href="{% url 'account_login' %}" class="dropdown-item">Sign In</a>
                 {% endif %}
               </div>
             </li>
             <!-- Bag link -->
             <li class="list-inline-item">
-              <a class="{% if bag_items %}font-weight-bold{% else %}font-weight-normal{% endif %} nav-link" href="{% url 'view_bag' %}">
+              <a class="{% if bag_items %}font-weight-bold{% else %}font-weight-normal{% endif %} nav-link"
+                href="{% url 'view_bag' %}">
                 <div class="text-center">
                   <div>
                     <i class="fas fa-shopping-bag fa-lg"></i>
                   </div>
                   <p>
                     {% if bag_items %}
-                        £{{ total|floatformat:2 }}
+                    £{{ total|floatformat:2 }}
                     {% else %}
-                        £0.00
+                    £0.00
                     {% endif %}
                   </p>
                 </div>
@@ -104,38 +104,38 @@
       </div>
       <div class="row bg-white">
         <nav class="navbar navbar-expand-lg navbar-light w-100">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-                {% include 'includes/mobile-top-header.html' %}
-                {% include 'includes/main-nav.html' %}
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav"
+            aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          {% include 'includes/mobile-top-header.html' %}
+          {% include 'includes/main-nav.html' %}
         </nav>
-    </div>
-    <div class="row text-center">
-      <div class="col">
-          <h4 class="my-1">Free delivery on orders over £{{ free_delivery_threshold }}!</h4>                
-      </div>            
-  </div>
+      </div>
+      <div class="row text-center">
+        <div class="col">
+          <h4 class="my-1">Free delivery on orders over £{{ free_delivery_threshold }}!</h4>
+        </div>
+      </div>
     </header>
 
     {% if messages %}
-        <div class="message-container">
-            {% for message in messages %}
-                {% with message.level as level %}
-                    {% if level == 40 %}
-                        {% include 'includes/toasts/toast_error.html' %}
-                    {% elif level == 30 %}
-                        {% include 'includes/toasts/toast_warning.html' %}
-                    {% elif level == 25 %}
-                        {% include 'includes/toasts/toast_success.html' %}
-                    {% else %}
-                        {% include 'includes/toasts/toast_info.html' %}
-                    {% endif %}
-                {% endwith %}
-            {% endfor %}
-        </div>
+    <div class="message-container">
+      {% for message in messages %}
+      {% with message.level as level %}
+      {% if level == 40 %}
+      {% include 'includes/toasts/toast_error.html' %}
+      {% elif level == 30 %}
+      {% include 'includes/toasts/toast_warning.html' %}
+      {% elif level == 25 %}
+      {% include 'includes/toasts/toast_success.html' %}
+      {% else %}
+      {% include 'includes/toasts/toast_info.html' %}
+      {% endif %}
+      {% endwith %}
+      {% endfor %}
+    </div>
     {% endif %}
-
 
     {% block page_header %}
     {% endblock %}
@@ -143,9 +143,61 @@
     {% block content %}
     {% endblock %}
 
-    {% block postloadjs %}
-      <script src="{% static 'js/script.js' %}"></script>
-    {% endblock %}
+  </div>
+  <footer>
+    <div class="row footer-container mx-auto">
+      <div class="col-12 col-md-4 d-flex justify-content-start justify-content-md-center">
+        <div class="row">
+          <div class="col-12 md-4">
+            <p>Customer Care</p>
+            <ul class="list-unstyled">
+              <li><a href="{% url 'contact' %}">Contact Us</a></li>
+              <li><a href="">FAQ's</a></li>
+              <li><a href="">Shipping & Handling</a></li>
+              <li><a href="">Returns</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-4 d-flex justify-content-start justify-content-md-center">
+        <div class="row">
+          <div class="col-12 md-4">
+            <p>Account</p>
+            <ul class="list-unstyled">
+              {% if request.user.is_authenticated %}
+              <li><a href="{% url 'profile' %}" class="dropdown-item">My Profile</a></li>
+              <li><a href="{% url 'account_logout' %}" class="dropdown-item">Sign Out</a></li>
+              {% else %}
+              <li><a href="{% url 'account_signup' %}" class="dropdown-item">Register</a></li>
+              <li><a href="{% url 'account_login' %}" class="dropdown-item">Sign In</a></li>
+              {% endif %}
+              <li><a href="{% url 'view_bag' %}">Bag</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-4 d-flex justify-content-start justify-content-md-center">
+        <div class="row">
+          <div class="col-12 md-4">
+            <p>Socials</p>
+            <ul class="list-unstyled">
+              <li><a href="https://www.instagram.com/" target="_blank" title="Instagram link"
+                rel="noopener">Instagram</a></li>
+              <li><a href="https://www.facebook.com/" target="_blank" title="Facebook link" rel="noopener">Facebook</a>
+              </li>
+              <li><a href="https://www.twitter.com/" target="_blank" title="Twitter link" rel="noopener">Twitter</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  {% block postloadjs %}
+  <script src="{% static 'js/script.js' %}"></script>
+  {% endblock %}
 
 </body>
 
