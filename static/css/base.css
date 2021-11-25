@@ -28,6 +28,7 @@ a:hover {
 
 }
 
+.nav-text,
 .text-red {
     color: #8E0413;
 }
@@ -36,6 +37,7 @@ a:hover {
     min-height: calc(100vh - 250px);
     
 }
+
 
 /* back to top button */
 .btt-link,
