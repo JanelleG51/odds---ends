@@ -13,9 +13,9 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
-            <div class="image-container my-5">
+            <div class="my-5">
                 {% if case.image %}
-                <a href="">
+                <a href="{{ MEDIA_URL }}{{ case.image }}" target="blank">
                     <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}{{ case.image }}" alt="{{ case.name }}">
                 </a>
                 {% else %}
@@ -84,18 +84,43 @@
                 <p class="mb-0">{{ case.category.friendly_name }}</p>
                 <p class="lead mb-0 text-left font-weight-bold">£{{ case.price }}</p>
                 {% if request.user.is_superuser %}
-                <small class="ml-3">
-                    <a href="{% url 'edit_case' case.id %}">Edit</a> |
-                    <a class="text-danger" href="{% url 'delete_case' case.id %}">Delete</a>
-                </small>
-                {% endif %}
+                <div>
+                    <small class="ml-3">
+                        <a href="{% url 'edit_case' case.id %}">Edit</a> |
+                        <button type="button" class="" data-toggle="modal" data-target="#delete_case{{case.id}}">
+                            Delete Case
+                        </button>
+                    </small>
+                </div>
+                <div class="modal fade mt-5" id="delete_case{{case.id}}" tabindex="-1" role="dialog"
+                    aria-labelledby="delete_case{{case.id}}Label" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="delete_case{{case.id}}Label">Delete Confirmation</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body text-left">
+                                <p class="mt-1">You are about to pemanantly delete this case</p>
+                                <p class="mt-1">Once you have deleted it, you cannot get it back</p>
+                                <p class="mt-1">Are you sure that you wish to delete?</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn mr-2" data-dismiss="modal">Cancel</button>
+                                <a href="{% url 'delete_case' case.id %}" class="btn modal-del-btn">Delete</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
             </div>
         </div>
     </div>
-</div>
-{% endblock %}
+    {% endblock %}
 
-{% block postloadjs %}
-{{ block.super }}
-<script src="{% static 'wines/js/quantity.js' %}"></script>
-{% endblock %}
+    {% block postloadjs %}
+    {{ block.super }}
+    <script src="{% static 'wines/js/quantity.js' %}"></script>
+    {% endblock %}
