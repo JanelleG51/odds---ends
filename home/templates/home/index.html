@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_title %}Home{% endblock %}
+
 {% block page_header %}
     <div class="container">
         <div class="row">
@@ -11,20 +13,69 @@
 
 {% block content %}
 
-<div class="container h-100">
-    <div class="row h-100">
-        <div class="col-7 col-md-6 my-auto">
-            <h1>Try a selection of quality wines at a fraction of the cost.</h1>
+<div class="">
+    <div class="container-fluid">
+        <div class="row hero-height">
+            <div class="col-12 text-center pr-2 pl-md-2">
+                <h2 class="text-red home-logo">Odds & Ends</h2>    
+            </div>
         </div>
-        <div class="my-5">
-            <h4>
-                <a href="{% url 'wines' %}" class="btn btn-lg">Browse Wines</a>
-            </h4>
+    </div>
+</div>
+<div class="">
+    <div class="text-center mb-2">
+        <h2>Who Are We</h2>
+        <p>Some text here</p>
+    </div>
+    <hr class="">
+    <div class="row d-flex justify-content-center mb-5 mt-5">
+        <div class="col-12 col-md-7 col-lg-4 text-right pr-0 pr-md-5">
+            <div class="">
+                <h3 class="mb-3">Customers</h3>
+                <p>What do we offer our customers</p>
+                <br>
+                <p>Information on cases and wines in stock</p>
+                <br>
+                <p>Cases only </p>
+                <p><a class="btn" href="{% url 'cases' %}">Buy Our Cases!</a></p>
+            </div>
         </div>
-        <div class="my-5">
-            <h4>
-                <a href="{% url 'cases' %}" class="btn btn-lg">See Our Cases</a>
-            </h4>
+        <div class="col-12 col-md-5 col-lg-3">
+            <img src="{{ MEDIA_URL }}customers_image.jpg" class="img-fluid" alt="A group of people drinking wine">
+        </div>
+    </div>
+    <hr class="">
+    <div class="row d-flex justify-content-center mb-5 mt-5">
+        <div class="col-12 col-md-5 col-lg-3">
+            <img src="{{ MEDIA_URL }}wineries_image.jpg" class="img-fluid" alt="A pair of hands holding a bunch of grapes">
+        </div>
+        <div class="col-12 col-md-7 col-lg-4 pl-0 pl-md-5">
+            <div class="">
+            <h3 class="mb-3">Wineries</h3>
+            <p>What do we want from wineries and how to get in touch.</p>
+            <br>
+            <p>If you would like us to buy your stock let us know.</p>
+            <br>
+            <p>We would love to hear from you.</p>
+            <p><a class="btn" href="{% url 'contact' %}">Contact Us!</a></p>
+            </div>
+        </div>
+    </div>
+    <hr class="">
+    <div class="row d-flex justify-content-center mb-5 mt-5">
+        <div class="col-12 col-md-7 col-lg-4 text-right pr-0 pr-md-5">
+            <div class="">
+                <h3 class="mb-3">Suppliers</h3>
+                <p>We work with suppliers from all over the world.</p>
+                <br>
+                <p>This is reflected in the stock we hold.</p>
+                <br>
+                <p>If you're a seasoned wine drinker or just starting out, we have something for all tastes!</p>
+                <p><a class="btn" href="{% url 'wines' %}">Browse Our Wines!</a></p>
+            </div>
+        </div>
+        <div class="col-12 col-md-5 col-lg-3">
+            <img src="{{ MEDIA_URL }}suppliers_image.jpg" class="img-fluid" alt="A photo of a selection of wine bottles">
         </div>
     </div>
 </div>

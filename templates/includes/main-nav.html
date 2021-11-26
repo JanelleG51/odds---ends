@@ -1,79 +1,79 @@
 <div class="collapse navbar-collapse" id="main-nav">
     <ul class="navbar-nav w-auto mx-auto">
         <li class="nav-item dropdown">
-            <a class="nav-link mr-5 nav-text" href="#" id="all-wines-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link mr-5" href="#" id="all-wines-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 All Wines
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-wines-link">
-                <a href="{% url 'wines' %}" class="dropdown-item nav-text">All Wines</a>
-                <a href="{% url 'wines' %}?sort=country&direction=asc" class="dropdown-item nav-text">Country</a>
-                <a href="{% url 'wines' %}?sort=price&direction=asc" class="dropdown-item nav-text">By Price</a>
-                <a href="{% url 'wines' %}?sort=rating&direction=desc" class="dropdown-item nav-text">By Rating</a>
+                <a href="{% url 'wines' %}" class="dropdown-item text-red">All Wines</a>
+                <a href="{% url 'wines' %}?sort=country&direction=asc" class="dropdown-item text-red">Country</a>
+                <a href="{% url 'wines' %}?sort=price&direction=asc" class="dropdown-item text-red">By Price</a>
+                <a href="{% url 'wines' %}?sort=rating&direction=desc" class="dropdown-item text-red">By Rating</a>
                 
             </div>
         </li>
 
         <li class="nav-item dropdown">
-            <a class="nav-link mr-5 nav-text" href="#" id="whites-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link mr-5" href="#" id="whites-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 White Wines
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="whites-link">
-                <a href="{% url 'wines' %}?category=white" class="dropdown-item nav-text">All Whites</a>
-                <a href="{% url 'wines' %}?category=white&sort=country&direction=asc" class="dropdown-item nav-text">Country</a>
-                <a href="{% url 'wines' %}?category=white&sort=region&direction=asc" class="dropdown-item nav-text">Region</a>
-                <a href="{% url 'wines' %}?category=white&sort=winery&direction=asc" class="dropdown-item nav-text">Winery</a>
-                <a href="{% url 'wines' %}?category=white&sort=price&direction=asc" class="dropdown-item nav-text">Price</a>
-                <a href="{% url 'wines' %}?category=white&sort=year&direction=asc" class="dropdown-item nav-text">Year</a>
+                <a href="{% url 'wines' %}?category=white" class="dropdown-item text-red">All Whites</a>
+                <a href="{% url 'wines' %}?category=white&sort=country&direction=asc" class="dropdown-item text-red">Country</a>
+                <a href="{% url 'wines' %}?category=white&sort=region&direction=asc" class="dropdown-item text-red">Region</a>
+                <a href="{% url 'wines' %}?category=white&sort=winery&direction=asc" class="dropdown-item text-red">Winery</a>
+                <a href="{% url 'wines' %}?category=white&sort=price&direction=asc" class="dropdown-item text-red">Price</a>
+                <a href="{% url 'wines' %}?category=white&sort=year&direction=asc" class="dropdown-item text-red">Year</a>
             </div>
         </li>
 
         <li class="nav-item dropdown">
-            <a class="nav-link mr-5 nav-text" href="#" id="reds-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link mr-5" href="#" id="reds-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Red Wines
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="reds-link">
-                <a href="{% url 'wines' %}?category=red" class="dropdown-item nav-text">All Reds</a>
-                <a href="{% url 'wines' %}?category=red&sort=country&direction=asc" class="dropdown-item nav-text">Country</a>
-                <a href="{% url 'wines' %}?category=red&sort=region&direction=asc" class="dropdown-item nav-text">Region</a>
-                <a href="{% url 'wines' %}?category=red&sort=winery&direction=asc" class="dropdown-item nav-text">Winery</a>
-                <a href="{% url 'wines' %}?category=red&sort=price&direction=asc" class="dropdown-item nav-text">Price</a>
-                <a href="{% url 'wines' %}?category=red&sort=year&direction=asc" class="dropdown-item nav-text">Year</a>
+                <a href="{% url 'wines' %}?category=red" class="dropdown-item text-red">All Reds</a>
+                <a href="{% url 'wines' %}?category=red&sort=country&direction=asc" class="dropdown-item text-red">Country</a>
+                <a href="{% url 'wines' %}?category=red&sort=region&direction=asc" class="dropdown-item text-red">Region</a>
+                <a href="{% url 'wines' %}?category=red&sort=winery&direction=asc" class="dropdown-item text-red">Winery</a>
+                <a href="{% url 'wines' %}?category=red&sort=price&direction=asc" class="dropdown-item text-red">Price</a>
+                <a href="{% url 'wines' %}?category=red&sort=year&direction=asc" class="dropdown-item text-red">Year</a>
             </div>
         </li>
 
 
         <li class="nav-item dropdown">
-            <a class="nav-link mr-5 nav-text" href="#" id="rose-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link mr-5" href="#" id="rose-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Rose Wines
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="rose-link">
-                <a href="{% url 'wines' %}?category=rose" class="dropdown-item nav-text">All Rose</a>
-                <a href="{% url 'wines' %}?category=rose&sort=region&direction=asc" class="dropdown-item nav-text">Region</a>
-                <a href="{% url 'wines' %}?category=rose&sort=winery&direction=asc" class="dropdown-item nav-text">Winery</a>
-                <a href="{% url 'wines' %}?category=rose&sort=price&direction=asc" class="dropdown-item nav-text">Price</a>
-                <a href="{% url 'wines' %}?category=rose&sort=year&direction=asc" class="dropdown-item nav-text">Year</a>
+                <a href="{% url 'wines' %}?category=rose" class="dropdown-item text-red">All Rose</a>
+                <a href="{% url 'wines' %}?category=rose&sort=region&direction=asc" class="dropdown-item text-red">Region</a>
+                <a href="{% url 'wines' %}?category=rose&sort=winery&direction=asc" class="dropdown-item text-red">Winery</a>
+                <a href="{% url 'wines' %}?category=rose&sort=price&direction=asc" class="dropdown-item text-red">Price</a>
+                <a href="{% url 'wines' %}?category=rose&sort=year&direction=asc" class="dropdown-item text-red">Year</a>
             </div>
         </li>
 
         <li class="nav-item dropdown">
-            <a class="nav-link mr-5 nav-text" href="#" id="sparkling-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link mr-5" href="#" id="sparkling-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                Sparkling & Champanges
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="sparkling-link">
-                <a href="{% url 'wines' %}?category=sparkling" class="dropdown-item nav-text">All Sparkling &amp; Champanges</a>
-                <a href="{% url 'wines' %}?category=sparkling&sort=region&direction=asc" class="dropdown-item nav-text">Region</a>
-                <a href="{% url 'wines' %}?category=sparkling&sort=winery&direction=asc" class="dropdown-item nav-text">Winery</a>
-                <a href="{% url 'wines' %}?category=sparkling&sort=price&direction=asc" class="dropdown-item nav-text">Price</a>
-                <a href="{% url 'wines' %}?category=sparkling&sort=year&direction=asc" class="dropdown-item nav-text">Year</a>
+                <a href="{% url 'wines' %}?category=sparkling" class="dropdown-item text-red">All Sparkling &amp; Champanges</a>
+                <a href="{% url 'wines' %}?category=sparkling&sort=region&direction=asc" class="dropdown-item text-red">Region</a>
+                <a href="{% url 'wines' %}?category=sparkling&sort=winery&direction=asc" class="dropdown-item text-red">Winery</a>
+                <a href="{% url 'wines' %}?category=sparkling&sort=price&direction=asc" class="dropdown-item text-red">Price</a>
+                <a href="{% url 'wines' %}?category=sparkling&sort=year&direction=asc" class="dropdown-item text-red">Year</a>
             </div>
         </li>
 
         <li class="nav-item dropdown">
-            <a class="nav-link mr-5 nav-text" href="#" id="cases-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link mr-5" href="#" id="cases-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                Cases
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="cases-link">
-                <a href="{% url 'cases' %}" class="dropdown-item nav-text">All Cases</a>
+                <a href="{% url 'cases' %}" class="dropdown-item text-red">All Cases</a>
             </div>
         </li>
 

@@ -2,12 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Concert+One&family=Permanent+Marker&display=swap');
 
 html {
-   height: 100%;
+    height: 100%;
 }
 
 body {
     height: 100%;
-    color:black;
+    color: black;
     font-family: 'Concert One', sans-serif;
     font-weight: 700;
 }
@@ -17,25 +17,32 @@ a {
 
 }
 
+h1,
+h2,
+.branding {
+    font-family: 'Permanent Marker', sans-serif;
+}
+
 a:hover {
     color: #DF8080;
 }
 
-.logo-text {
-    color: #8E0413;
-    font-family: 'Permanent Marker', sans-serif;
+.logo-size {
     font-size: 4rem;
 
 }
 
-.nav-text,
 .text-red {
     color: #8E0413;
 }
 
 .base-container {
     min-height: calc(100vh - 250px);
-    
+
+}
+
+.home-logo {
+    font-size: 2.75rem;
 }
 
 
@@ -80,8 +87,10 @@ a:hover {
 /* allauth forms styling override */
 
 .allauth-form-inner-content p {
-    margin-top: 1.5rem; /* mt-4 */
-    color: #6c757d; /* text-secondary */
+    margin-top: 1.5rem;
+    /* mt-4 */
+    color: #6c757d;
+    /* text-secondary */
 }
 
 .allauth-form-inner-content input {
@@ -99,8 +108,8 @@ a:hover {
 
 .allauth-form-inner-content button,
 .allauth-form-inner-content input[type='submit'] {
-	/* btn */
-	display: inline-block;
+    /* btn */
+    display: inline-block;
     font-weight: 400;
     color: #fff;
     text-align: center;
@@ -117,18 +126,19 @@ a:hover {
     border-radius: 0;
 
     /* standard bootstrap btn transitions */
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
 .allauth-form-inner-content button:hover,
-.allauth-form-inner-content input[type='submit']:hover {	
-	color: #fff;
+.allauth-form-inner-content input[type='submit']:hover {
+    color: #fff;
     background-color: #222;
     border-color: #222;
 }
 
 .allauth-form-inner-content a {
-	color: #17a2b8; /* text-info */
+    color: #17a2b8;
+    /* text-info */
 }
 
 /* Product form */
@@ -163,13 +173,15 @@ a:hover {
 /* footer */
 
 .footer-container {
+    background-color: #fff;
     border-top: 1px black solid;
     border-bottom: 1px black solid;
     width: 80vw;
     padding: 15px 0px;
     margin-bottom: 30px;
-    background-color: #fff;
+
 }
+
 .footer-container ul {
     padding: 3px 6px;
 }

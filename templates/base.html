@@ -53,7 +53,7 @@
       <div class="row d-none d-lg-flex">
         <!-- Site logo -->
         <div class="col-12 col-lg-6 mt-4">
-          <a href="{% url 'home' %}" class="logo-text">Odds & Ends</a>
+          <a href="{% url 'home' %}" class=" branding text-red logo-size">Odds & Ends</a>
         </div>
 
         <div class="col-12 col-lg-6 mt-5">
@@ -152,9 +152,9 @@
             <p>Customer Care</p>
             <ul class="list-unstyled">
               <li><a class="text-red" href="{% url 'contact' %}">Contact Us</a></li>
-              <li><a class="text-red" href="">FAQ's</a></li>
-              <li><a class="text-red" href="">Shipping & Handling</a></li>
-              <li><a class="text-red" href="">Returns</a></li>
+              <li><a class="text-red" href="{% url 'contact' %}">FAQ's</a></li>
+              <li><a class="text-red" href="{% url 'contact' %}">Shipping & Handling</a></li>
+              <li><a class="text-red" href="{% url 'contact' %}">Returns</a></li>
             </ul>
           </div>
         </div>
