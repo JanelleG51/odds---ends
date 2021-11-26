@@ -19,7 +19,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="product-container col-10 offset-2">
+        <div class="col-10 offset-lg-2">
             <div class="row mt-1 mb-2"></div>
             <div class="row">
                 {% for case in cases %}
@@ -34,17 +34,16 @@
                                     <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ case.name }}">
                                 </a>
                             {% endif %}
-                            <div class="card-body pb-0">
+                            <div class="card-body pb-0 text-right">
                                 <p class="mb-0">{{ case.category.friendly_name }}</p>
                             </div>
                             <div class="card-footer bg-white pt-0 border-0 text-left">
                                 <div class="row">
                                     <div class="col">
-                                        <p class="lead mb-0 text-left">£{{ case.price }}</p>
+                                        <p class="lead mb-0 text-right">£{{ case.price }}</p>
                                         {% if request.user.is_superuser %}
                                                 <small class="ml-3">
-                                                    <a href="{% url 'edit_case' case.id %}">Edit</a> | 
-                                                    <a class="text-danger" href="{% url 'delete_case' case.id %}">Delete</a>
+                                                    <a class="text-right" href="{% url 'edit_case' case.id %}">Edit</a>
                                                 </small>
                                             {% endif %}
                                     </div>
