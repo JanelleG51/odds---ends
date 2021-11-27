@@ -8,9 +8,7 @@ You can view the live site [here.](https://odds-and-ends.herokuapp.com/)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
-
-## About
-
+____
 ## UX
 ### Strategy 
 
@@ -59,7 +57,13 @@ The target customer for this site is anyone who likes and enjoys wine but might 
 
 #### Impression 
 
+The site is one of basic presentation meant to give the feel of a handwritten specials board that can be updated daily. The site offers quality wines at a discounted price and as such the stock can change depending on what is available. The impression of basic and changable but quality is what the developer wanted the site to deliver. 
+
 #### Typography
+
+To acheive the handwritten specials board feel, the font [Permanent Marker](https://fonts.google.com/specimen/Permanent+Marker?query=perm) was chosen for the logo and headings. 
+
+The body of the site use [Concert One](https://fonts.google.com/specimen/Concert+One?query=concert). The curved edges of the lettering wth no sharp edges complements the Permanent Marker font and is in keeping with the overall theme.
 
 #### Colour Scheme 
 
@@ -67,14 +71,16 @@ The target customer for this site is anyone who likes and enjoys wine but might 
 
 #### Wireframes
 
-## Features 
 
 ## Features 
 
 
 ## Features left to implement 
 
-### Database Schema
+### Database
+The build of this site used two relational databases. SQLite was used during the intial development of the site with Postgres being ustlised once the site was moved to deployment on Heroku. The database models and their relationships are illustrated and described below:
+
+![Database Schema](readme_docs/database_schema.png)
 
 ## Testing
 
