@@ -50,32 +50,30 @@ The target customer for this site is anyone who likes and enjoys wine but might 
 - Add, edit or delete the cases for sale.
 - Be notified by email when customers or wineries make contact using the [Contact](https://odds-and-ends.herokuapp.com/contact/) page.
 
-
-## Structure
- 
-### Design
-
-#### Impression 
+## Design
+____
+### Impression 
 
 The site is one of basic presentation meant to give the feel of a handwritten specials board that can be updated daily. The site offers quality wines at a discounted price and as such the stock can change depending on what is available. The impression of basic and changable but quality is what the developer wanted the site to deliver. 
 
-#### Typography
+### Typography
 
 To acheive the handwritten specials board feel, the font [Permanent Marker](https://fonts.google.com/specimen/Permanent+Marker?query=perm) was chosen for the logo and headings. 
 
 The body of the site use [Concert One](https://fonts.google.com/specimen/Concert+One?query=concert). The curved edges of the lettering wth no sharp edges complements the Permanent Marker font and is in keeping with the overall theme.
 
-#### Colour Scheme 
+### Colour Scheme 
 
-#### Imagery
+### Imagery
 
-#### Wireframes
+### Wireframes
 
 
 ## Features 
-
+___
 
 ## Features left to implement 
+___
 
 ### Database
 The build of this site used two relational databases. SQLite was used during the intial development of the site with Postgres being ustlised once the site was moved to deployment on Heroku. The database models and their relationships are illustrated and described below:
@@ -138,38 +136,64 @@ Python Modules:
 - [Font Awesome](https://fontawesome.com/) - icons displayed throughout the site are taken from Font Awesome.
 
 ## Configuration
-
-## Deployment to Heroku
+### Deployment to Heroku
+#### Requirements.txt
+Heroku deployment requires a populated file of all dependencies used during the site build:
+- In the GitPod terminal, type pip3 freeze --local > requirements.txt to create your requirements file.
+#### Procfile
+- Create a Procfile providing the app name where required web: gunicorn [app_name].wsgi:application 
 
 ### Create application:
 
 - Login to Heroku.
-- Click on the new button.
-- Select create new app.
-- Enter the app name.
-- Select region.
+- Click on 'Create New App' from your dashboard.
+- Enter a unique app name.
+- Select the appropriate region closest to your location.
 
 Set up connection to Github Repository:
 
-- Set your deployment method to 'GitHub'
+- From the 'Deploy' tab, set your deployment method to 'GitHub'
+- From 'Deployment Method' choose 'GitHub'
 - Connect to GitHub and login
 - Search for the repository you wish to deploy from
-- Click the connect button.
+- Click the 'Connect' button
 
-Set environment variables:
+### Heroku Postgres Database
+- Select the resources tab in Heroku.
+- In Add-ons, search for Heroku Postgres and select.
+- Select the Hobby Dev-Free option in plans.
+- Click submit.
+- This will prvide you with the DATABASE_URL you require for the Config Vars.
 
-Click the settings tab and then click the Reveal Config Vars button and add the following:
+In the build environment, install two requirements and add to requirements.txt:
+- pip3 install dj_databse_url
+- pip3 install psycopg2-binary
+- pip3 freeze > requirements.txt
 
-- key: IP, value: 0.0.0.0
-- key: PORT, value: 5000
-- key: MONGO_DBNAME, value: (database name you want to connect to)
-- key: MONGO_URI, value: (mongo uri - This can be found in MongoDB by going to clusters > connect > connect to your application and substituting the password and dbname that you set up in the link).
-- key: SECRET_KEY, value: (This is a custom secret key set up for configuration to keep client-side sessions secure).
+
+### Set environment variables:
+
+In Heroku, click the settings tab and then select 'Reveal Config Vars' button and add the following:
+
+Variable | Source | 
+-----|-------------|
+DATABASE_URL | Heroku Postgres   
+SECRET_KEY | [Django Random Key Generator](https://miniwebtool.com/django-secret-key-generator/)
+AWS_SECRET_ACCESS_KEY | AWS File 
+AWS_ACCESS_KEY_ID | AWS File 
+EMAIL_HOST_PASS | Email Host Generated 
+EMAIL_HOST_USER | Email address being used
+USE_AWS | True
+STRIPE_PUBLIC_KEY | Stripe Dashboard > Developers tab > API Keys > Publishable key
+STRIPE_SECRET_KEY | Stripe Dashboard > Developers tab > API Keys > Secret key
+STRIPE_WH_SECRET | Stripe Dashboard > Developers tab > Webhooks > site endpoint > Signing secret
+
+
 
 Enable automatic deployment:
 
 - Click the Deploy tab
-- In the Automatic deploys section, choose the branch you want to deploy from then click Enable Automation Deploys.
+- In the Automatic deploys section, choose the branch you want to deploy from then click Enable Automatic Deploys.
 
 ### AWS
 
@@ -184,6 +208,7 @@ Forking results in a secondary branch of the site being created. The secondary b
 4. A forked branch of the repository is then created. This is a copy of the repository up to the point the forked branch was created.
 5. Changes can then be made in the forked repository without those changes taking effect in the Master Branch.
 6. Both repositories can be merged by selecting New Pull Request from the original repository.
+
 ## Cloning
 1. Log into GitHub.
 2. Select your desired repository from the options to the left.
@@ -191,8 +216,11 @@ Forking results in a secondary branch of the site being created. The secondary b
 4. From the HTTPS tab, copy the URL for the repository.
 5. Once in your local IDE open a new terminal.
 6. Chose the working directory where you would like the cloned directory to be created.
-7. Type git clone into the terminal and paste the repository URL.
+7. Type git clone into the terminal and paste the repository URL
+- $ git clone https://github.com/JayMacG51/odds---ends
 8. Press enter to finish the cloning process.
+
+All requirements will need to be reinstalled. You can do this in the terminal using pip3 install -r requirements.txt 
 
 ## Credits
 
