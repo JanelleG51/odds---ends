@@ -1,5 +1,9 @@
 # Odds & Ends
 
+At Odds & Ends we never like to see a good bottle of wine being neglected, so it is our mission to gather all of the odd bottles and bin ends that vineyards have lying around and pass them on to our customers by the case for a great price. The offering is simple, pick a case at one of our three price points and you will receive a selection of 12 bottles from the stock you can see on our site. The more you pay for the case, the more expensive the overall value and your case is always guaranteed to be worth at least 50% more than you’ve paid! You can buy once or as many times as you like to take the opportunity to sample wines from all over the world that you may not get anywhere else for a bargain price.
+
+You can view the live site [here.](https://odds-and-ends.herokuapp.com/)
+
 ![amiresponsive]()
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
@@ -10,73 +14,72 @@
 ## UX
 ### Strategy 
 
-### Target Audience
+### Target Consumer 
+
+The target customer for this site is anyone who likes and enjoys wine but might be a little uninspired by what is on offer in supermarkets and those who would like to sample lesser-known or expensive wines for a reduced price.  
 
 ### User Stories
 
+#### As a site visitor, I want to be able to: 
+- Understand the sites purpose at first glance. 
+- View the wines on offer at that time. 
+- Know the prices of the cases on offer.
+- See the market value of each individual bottle of wine.
+- Filter wines by multiple options. 
+- See the number of results returned for each catergory.  
 
+#### As a buyer, I want to be able to:
+- Clearly see the purchase options available to me. 
+- Complete the checkout process without the requirement to create an account.
+- View the selection in my bag to be purchased.  
+- Add additonal cases to purchase or delete an exisiting case.
+- Easily enter payment details. 
+- Know the payment process is safe and secure.
+- View an order confirmation after checkout. 
+- Receive a confirmation email once the sale has completed.
 
-### Site Goals
+#### As a registered user, I want to be able to:
+- Easily register for an account. 
+- Easily login and logout. 
+- Reset my password. 
+- Receive confirmation of registration. 
+- View all my details and orders in my own profile. 
+- Update the details in my profile.
 
-## Scope
-### Planned features: Backend and frontend development 
- 
-  
-![scope diagram]()
+#### As a site owner, I want to be able to:
+- Have administrator access directly through the site.
+- Add, edit or delete the wines in stock. 
+- Add, edit or delete the cases for sale.
+- Be notified by email when customers or wineries make contact using the [Contact](https://odds-and-ends.herokuapp.com/contact/) page.
+
 
 ## Structure
  
-
-![database strcture]()
-
-### Database Schema
-
-
-![database strcture]()
-
-![database strcture]()
-
-## Validation and Security
-.
-### Backend environment:
-
-## Features 
 ### Design
-### Skeleton
+
+#### Impression 
+
+#### Typography
+
+#### Colour Scheme 
+
+#### Imagery
 
 #### Wireframes
-#### Home
-![Home]()
-#### Register
-![Register]()
-#### Log In
-![Login]()
-#### Profile
-![Profile]()
-
-#### Contact
-![Contact]()
 
 ## Features 
 
-## Design
+## Features 
 
-![Colours]()
-
-### Typography 
-
-## Imagery
-
-
-### Alterations to design
 
 ## Features left to implement 
+
+### Database Schema
 
 ## Testing
 
 The developer used [W3C HTML Validator](https://validator.w3.org/), [W3C CSS Validator](https://jigsaw.w3.org/css-validator/), [JSHint Validator](https://jshint.com/) [PEP8 Validator](http://pep8online.com/) for code validation.
 
- ![validator]()
 
  ### Manual Testing
 
@@ -85,7 +88,7 @@ The result of manual testing for the site are below:
 ![testing]()
 
 
-## Technologies
+## Technologies Used 
 - [HTML5](https://en.wikipedia.org/wiki/HTML5) – used to complete the structure of the site.
 - [CSS3](https://en.wikipedia.org/wiki/CSS) - used to style the presentation of the content on the site.
 - [JavaScript](https://www.javascript.com/) & [jQuery](https://jquery.com/) - were used for front-end dynamic interaction
@@ -100,9 +103,6 @@ Python Modules:
 - [Font Awesome](https://fontawesome.com/) - icons displayed throughout the site are taken from Font Awesome.
 
 ## Configuration
-
-### AWS
-
 
 ## Deployment to Heroku
 
@@ -135,6 +135,10 @@ Enable automatic deployment:
 
 - Click the Deploy tab
 - In the Automatic deploys section, choose the branch you want to deploy from then click Enable Automation Deploys.
+
+### AWS
+
+### Email
 
 ## Forking
 Forking results in a secondary branch of the site being created. The secondary branch can be worked on simultaneously without the Master Branch being altered. The steps below should be followed:
