@@ -82,6 +82,35 @@ The build of this site used two relational databases. SQLite was used during the
 
 ![Database Schema](readme_docs/database_schema.png)
 
+#### User Model
+- Holds a user’s registration information provided at sign up.
+- Information from the User Model is used to create the UserProfile.
+#### UserProfile
+- Stores the user’s delivery and order history.
+- Takes information from the User model to create the profile.
+- The Order model receives this information to create the order history on the profile page.
+
+#### Wines Model
+- Stores the details of all wines currently held in stock and available as part of the case selections. 
+- Information is pulled from the categories model to supply the wine colour.
+#### Cases Model
+- Stores the details of all cases currently for sale on the site (case category, type and price).
+- Information is pulled from the categories model to supply the case name.
+- The OrderLineItem model receives the category name to generate the correct order.
+#### Categories Model
+- Contains all categories for both the wines and cases models.
+#### OrderLineItem
+- Stores the case details that have been added to the user’s bag.
+- Takes information from the cases model to add cases to the user’s order.
+- Information from the OrdeLineItem is sent to the Order model to update the order.
+#### Order
+- Stores all of the order information for each purchase made by the user.
+- Pulls information from the OrderLineItem model to add a case/s to the order.
+- The order detail are used in the UserProfile model to attach the order to the user’s profile.
+
+
+
+
 ## Testing
 
 The developer used [W3C HTML Validator](https://validator.w3.org/), [W3C CSS Validator](https://jigsaw.w3.org/css-validator/), [JSHint Validator](https://jshint.com/) [PEP8 Validator](http://pep8online.com/) for code validation.
