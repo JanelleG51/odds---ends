@@ -195,6 +195,9 @@ a:hover {
     border-radius: 0;
 }
 
+.form-control {
+    padding: 0 !important;  
+}
 
 /* footer */
 
