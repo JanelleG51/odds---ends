@@ -9,12 +9,17 @@ body {
     height: 100%;
     color: black;
     font-family: 'Concert One', sans-serif;
-    font-weight: 700;
 }
 
 a {
     text-decoration: none !important;
 
+}
+
+hr {
+    border-top: 1px solid;
+    color: #8E0413;
+    width: 80vw; 
 }
 
 h1,
@@ -36,14 +41,23 @@ a:hover {
     color: #8E0413;
 }
 
+.btn {
+    color: #F3F4F6;
+    background-color:#8E0413;
+    border: 1px solid ;
+}
+
 .base-container {
-    min-height: calc(100vh - 250px);
+    min-height: 100vh;
 
 }
+
+/* home page */
 
 .home-logo {
     font-size: 2.75rem;
 }
+
 
 
 /* back to top button */

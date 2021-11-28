@@ -4,77 +4,101 @@
 {% block extra_title %}Home{% endblock %}
 
 {% block page_header %}
-    <div class="container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
-    </div>
+
 {% endblock %}
 
 {% block content %}
-
-<div class="">
-    <div class="container-fluid">
-        <div class="row mt-5">
-            <div class="col-12 text-center pr-2 pl-md-2">
-                <h2><a class="text-red home-logo" href="{% url 'home' %}">Odds & Ends</a></h2>    
-            </div>
+<div class="container-fluid">
+    <div class="row mt-5">
+        <div class="col-12 text-center pr-2 pl-md-2">
+            <h1><a class="text-red home-logo" href="{% url 'home' %}">Odds & Ends</a></h1>
         </div>
     </div>
-</div>
-<div class="">
-    <div class="text-center mb-2">
-        <h2>Who Are We</h2>
-        <p>Some text here</p>
+
+    <div class="row text-center mb-3">
+        <div class="col">
+            <h2>Who Are We</h2>
+        </div>
     </div>
-    <hr class="">
+    <div class="row text-center mb-2 ml-3 mr-3 justify-content-center">
+        <div class="col-12 col-md-8">
+            <p>At Odds & Ends we never like to see a good bottle of wine being neglected, so it is our mission to gather
+                all
+                of the odd bottles and bin ends that vineyards have lying around and pass them on to our customers by
+                the
+                case for a great price.
+                <br>
+                <br>
+                The offering is simple, pick a case at one of our three price points and you will
+                receive a selection of 12 bottles from the stock you can see on our site.
+                <br>
+                <br>
+                The more you pay for the case, the
+                more expensive the overall value and your case is always guaranteed to be worth at least 50% more than
+                you’ve paid!
+                <br>
+                <br>
+                You can buy once or as many times as you like to take the opportunity to sample wines from all
+                over the world that you may not get anywhere else for a bargain price.</p>
+        </div>
+    </div>
+    <hr>
     <div class="row d-flex justify-content-center mb-5 mt-5">
-        <div class="col-12 col-md-7 col-lg-4 text-right pr-0 pr-md-5">
-            <div class="">
+        <div class="col-12 col-md-7 text-right pl-3">
+            <div>
                 <h3 class="mb-3">Customers</h3>
-                <p>What do we offer our customers</p>
+                <p>The main reason we are able to offer our customer’s such great wines for such a great price to is
+                    that
+                    we only sell by the case. </p>
                 <br>
-                <p>Information on cases and wines in stock</p>
+                <p>This keeps our storage and delivery costs down and allows us to pass
+                    the saving on to you.</p>
                 <br>
-                <p>Cases only </p>
+                <p>Our cases always have a value of more than what you pay (at least 50% more!) and you can chose from a mixed case, all red
+                    or all white. </p>
+                <p>Our white and mixed cases will always contain a few bottles of somthing fizzy in there
+                    for you to enjoy.</p>
                 <p><a class="btn" href="{% url 'cases' %}">Buy Our Cases!</a></p>
             </div>
         </div>
-        <div class="col-12 col-md-5 col-lg-3">
+        <div class="col-12 col-md-5">
             <img src="{{ MEDIA_URL }}customers_image.jpg" class="img-fluid" alt="A group of people drinking wine">
         </div>
     </div>
-    <hr class="">
+    <hr>
     <div class="row d-flex justify-content-center mb-5 mt-5">
-        <div class="col-12 col-md-5 col-lg-3">
-            <img src="{{ MEDIA_URL }}wineries_image.jpg" class="img-fluid" alt="A pair of hands holding a bunch of grapes">
+        <div class="col-12 col-md-5">
+            <img src="{{ MEDIA_URL }}wineries_image.jpg" class="img-fluid"
+                alt="A pair of hands holding a bunch of grapes">
         </div>
-        <div class="col-12 col-md-7 col-lg-4 pl-0 pl-md-5">
-            <div class="">
-            <h3 class="mb-3">Wineries</h3>
-            <p>What do we want from wineries and how to get in touch.</p>
-            <br>
-            <p>If you would like us to buy your stock let us know.</p>
-            <br>
-            <p>We would love to hear from you.</p>
-            <p><a class="btn" href="{% url 'contact' %}">Contact Us!</a></p>
+        <div class="col-12 col-md-7">
+            <div>
+                <h3 class="mb-3">Wineries</h3>
+                <p>If you’re a winery or a seller and looking to create a little more space in your cellars, we’d love
+                    to hear from you. </p>
+                <br>
+                <p>If you would like us to buy your stock let us know. We will take those odd bottles or cases off your
+                    hands - it’s a great way to get your wines out there.</p>
+                <br>
+                <p>We all know wine is best when drunk!</p>
+                <p><a class="btn" href="{% url 'contact' %}">Contact Us!</a></p>
             </div>
         </div>
     </div>
-    <hr class="">
+    <hr>
     <div class="row d-flex justify-content-center mb-5 mt-5">
-        <div class="col-12 col-md-7 col-lg-4 text-right pr-0 pr-md-5">
-            <div class="">
+        <div class="col-12 col-md-7 text-right">
+            <div>
                 <h3 class="mb-3">Suppliers</h3>
-                <p>We work with suppliers from all over the world.</p>
+                <p>Without our suppliers we'd having a difficult time offering you such amazing wines.</p>
                 <br>
-                <p>This is reflected in the stock we hold.</p>
+                <p>We have great relationships with suppliers from all over the world and that won't be changing anytime soon!</p>
                 <br>
-                <p>If you're a seasoned wine drinker or just starting out, we have something for all tastes!</p>
+                <p>Whether you're a seasoned wine drinker or just starting out, we have something for all tastes.</p>
                 <p><a class="btn" href="{% url 'wines' %}">Browse Our Wines!</a></p>
             </div>
         </div>
-        <div class="col-12 col-md-5 col-lg-3">
+        <div class="col-12 col-md-5">
             <img src="{{ MEDIA_URL }}suppliers_image.jpg" class="img-fluid" alt="A photo of a selection of wine bottles">
         </div>
     </div>
