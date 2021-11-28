@@ -41,6 +41,10 @@ a:hover {
     color: #8E0413;
 }
 
+.text-green {
+    color: #004733;
+}
+
 .btn {
     color: #F3F4F6;
     background-color:#8E0413;
