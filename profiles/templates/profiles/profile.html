@@ -1,26 +1,23 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_title %}Profile{% endblock %}
 
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'profiles/css/profiles.css' %}">
 {% endblock %}
 
 {% block page_header %}
-<div class="container">
-    <div class="row">
-        <div class="col">
-        </div>
-    </div>
-</div>
+
 {% endblock %}
 
 {% block content %}
 <div class="container">
     <div class="row">
         <div class="col">
-            <hr>
+            <hr class="heading-form-rule">
             <h2 class="mb-4">My Profile</h2>
+            <hr class="heading-form-rule">
         </div>
     </div>
 
@@ -58,9 +55,8 @@
                                 <ul class="list-unstyled">
                                     {% for item in order.lineitems.all %}
                                     <li class="small">
-                                        {% if item.case.has_type %}
-                                        Type {{ item.case.type|upper }}
-                                        {% endif %}{{ item.case.name }} x{{ item.quantity }}
+                                        Type: {{ item.case.type|upper }}
+                                        {{ item.case.name }} x{{ item.quantity }}
                                     </li>
                                     {% endfor %}
                                 </ul>
