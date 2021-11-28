@@ -6,12 +6,12 @@
 <head>
 
   {% block meta %}
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="A site for wine lovers and those wanting to try something new">
-  <meta name="keywords" content="">
-  <meta name="author" content="">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A site for wine lovers and those wanting to try something new">
+    <meta name="keywords" content="wine, wines, case, cases, red, white, rose, sparkling, bargain, odds, bin ends, wineries">
+    <meta name="author" content="Janelle MacMillan">
   {% endblock %}
 
   {% block extra_meta %}
@@ -19,9 +19,9 @@
 
 
   {% block corecss %}
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
   {% endblock %}
 
 
@@ -29,22 +29,23 @@
   {% endblock %}
 
   {% block corejs %}
-  <script src="https://kit.fontawesome.com/bc244e029a.js" crossorigin="anonymous"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-  </script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
-  </script>
-  <script src="https://js.stripe.com/v3/"></script>
+    <script src="https://kit.fontawesome.com/bc244e029a.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+    <script src="https://js.stripe.com/v3/"></script>
   {% endblock %}
 
   {% block extra_js %}
   {% endblock %}
-  <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon-32x32.png' %}">
-  <title>Odds & Ends {% block extra_title %}{% endblock %}</title>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon-32x32.png' %}">
+    <title>Odds & Ends {% block extra_title %}{% endblock %}</title>
 </head>
 
 <body>
@@ -60,24 +61,24 @@
           <ul class="list-inline list-unstyled text-right">
             <!-- User profile dropdown -->
             <li class="list-inline-item dropdown">
-              <a class="nav-link mr-4 text-red" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true"
-                aria-expanded="false">
+              <a class="nav-link mr-4 text-red" href="#" id="account-options" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
                 <div class="text-center">
                   <div><i class="fas fa-glass-cheers fa-lg"></i></div>
                   <p>My Account</p>
                 </div>
               </a>
-              <div class="dropdown-menu" aria-labelledby="user-options">
+              <div class="dropdown-menu" aria-labelledby="account-options">
                 {% if request.user.is_authenticated %}
-                {% if request.user.is_superuser %}
-                <a href="{% url 'add_wine' %}" class="dropdown-item text-red">Add Wine</a>
-                <a href="{% url 'add_case' %}" class="dropdown-item text-red">Add Case</a>
-                {% endif %}
-                <a href="{% url 'profile' %}" class="dropdown-item text-red">My Profile</a>
-                <a href="{% url 'account_logout' %}" class="dropdown-item text-red">Sign Out</a>
-                {% else %}
-                <a href="{% url 'account_signup' %}" class="dropdown-item text-red">Register</a>
-                <a href="{% url 'account_login' %}" class="dropdown-item text-red">Sign In</a>
+                  {% if request.user.is_superuser %}
+                    <a href="{% url 'add_wine' %}" class="dropdown-item text-red">Add Wine</a>
+                    <a href="{% url 'add_case' %}" class="dropdown-item text-red">Add Case</a>
+                  {% endif %}
+                    <a href="{% url 'profile' %}" class="dropdown-item text-red">My Profile</a>
+                    <a href="{% url 'account_logout' %}" class="dropdown-item text-red">Sign Out</a>
+                  {% else %}
+                    <a href="{% url 'account_signup' %}" class="dropdown-item text-red">Register</a>
+                    <a href="{% url 'account_login' %}" class="dropdown-item text-red">Sign In</a>
                 {% endif %}
               </div>
             </li>
@@ -149,7 +150,7 @@
       <div class="col-12 col-md-4 d-flex justify-content-start justify-content-md-center">
         <div class="row">
           <div class="col-12 md-4">
-            <p>Customer Care</p>
+            <h5>Customer Care</h5>
             <ul class="list-unstyled">
               <li><a class="text-red" href="{% url 'contact' %}">Contact Us</a></li>
               <li><a class="text-red" href="{% url 'contact' %}">FAQ's</a></li>
@@ -162,14 +163,14 @@
       <div class="col-12 col-md-4 d-flex justify-content-start justify-content-md-center">
         <div class="row">
           <div class="col-12 md-4">
-            <p>Account</p>
+            <h5>Account</h5>
             <ul class="list-unstyled">
               {% if request.user.is_authenticated %}
-              <li><a href="{% url 'profile' %}" class="text-red">My Profile</a></li>
-              <li><a href="{% url 'account_logout' %}" class="text-red">Sign Out</a></li>
-              {% else %}
-              <li><a href="{% url 'account_signup' %}" class="text-red">Register</a></li>
-              <li><a href="{% url 'account_login' %}" class="text-red">Sign In</a></li>
+                  <li><a href="{% url 'profile' %}" class="text-red">My Profile</a></li>
+                  <li><a href="{% url 'account_logout' %}" class="text-red">Sign Out</a></li>
+                {% else %}
+                  <li><a href="{% url 'account_signup' %}" class="text-red">Register</a></li>
+                  <li><a href="{% url 'account_login' %}" class="text-red">Sign In</a></li>
               {% endif %}
               <li><a href="{% url 'view_bag' %}" class="text-red">Bag</a></li>
             </ul>
@@ -179,7 +180,7 @@
       <div class="col-12 col-md-4 d-flex justify-content-start justify-content-md-center">
         <div class="row">
           <div class="col-12 md-4">
-            <p>Socials</p>
+            <h5>Socials</h5>
             <ul class="list-unstyled">
               <li><a class="text-red" href="https://www.instagram.com/" target="_blank" title="Instagram link"
                   rel="noopener">Instagram</a></li>
@@ -198,7 +199,7 @@
 
 
   {% block postloadjs %}
-    <script src="{% static 'js/script.js' %}"></script>
+  <script src="{% static 'js/script.js' %}"></script>
   {% endblock %}
 
 </body>
