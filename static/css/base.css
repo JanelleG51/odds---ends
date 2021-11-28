@@ -22,6 +22,14 @@ hr {
     width: 80vw; 
 }
 
+.heading-form-rule {
+    width: 60vw;
+}
+
+.form-rule {
+    width: 30vw;
+}
+
 h1,
 h2,
 .branding {
