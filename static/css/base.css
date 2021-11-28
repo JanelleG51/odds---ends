@@ -196,7 +196,7 @@ a:hover {
 }
 
 .form-control {
-    padding: 0 !important;  
+    padding: 0.01rem 0.375rem !important;  
 }
 
 /* footer */
