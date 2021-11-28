@@ -1,14 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_title %}Add Wine{% endblock %}
+
 {% block page_header %}
 
-<div class="container">
-    <div class="row">
-        <div class="col">
-        </div>
-    </div>
-</div>
 {% endblock %}
 
 {% block content %}
@@ -16,10 +12,10 @@
 <div class="container">
     <div class="row">
         <div class="col-12 col-md-6">
-            <hr>
-            <h2 class="logo-font mb-4">Product Management</h2>
+            <hr class="heading-form-rule">
+            <h2 class="mb-4">Product Management</h2>
             <h5 class="text-muted">Add a Wine</h5>
-            <hr>
+            <hr class="heading-form-rule">
         </div>
     </div>
 
@@ -28,18 +24,18 @@
             <form method="POST" action="{% url 'add_wine' %}" class="form mb-2" enctype="multipart/form-data">
                 {% csrf_token %}
                 {% for field in form %}
-                        {% if field.name != 'image' %}
-                            {{ field | as_crispy_field }}
-                        {% else %}
-                            {{ field }}
-                        {% endif %}
-                    {% endfor %}
+                {% if field.name != 'image' %}
+                {{ field | as_crispy_field }}
+                {% else %}
+                {{ field }}
+                {% endif %}
+                {% endfor %}
                 <div class="text-right">
-                    <a class="btn btn-outline-black rounded-0" href="{% url 'wines' %}">Cancel</a>
-                    <button class="btn btn-black rounded-0" type="submit">Add Wine</button>
+                    <a class="btn btn-cancel" href="{% url 'wines' %}">Cancel</a>
+                    <button class="btn" type="submit">Add Wine</button>
                 </div>
             </form>
-        </div>            
+        </div>
     </div>
 </div>
 
@@ -47,5 +43,5 @@
 
 {% block postloadjs %}
 {{ block.super }}
-    <script src="{% static 'wines/js/add_product.js' %}"></script>
+<script src="{% static 'wines/js/add_product.js' %}"></script>
 {% endblock %}
