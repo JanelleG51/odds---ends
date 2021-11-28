@@ -196,6 +196,68 @@ Enable automatic deployment:
 - In the Automatic deploys section, choose the branch you want to deploy from then click Enable Automatic Deploys.
 
 ### AWS
+#### AWS S3 Bucket
+- Go to [AWS](https://aws.amazon.com/) and create an account 
+- From the 'Services' tab on the AWS Management Console, search 'S3' and select it.
+- Click 'Create a new bucket', provide a unique name and choose the region closest to you.
+- Uncheck 'Block all public access' and confirm that public access will be granted.
+- Do not change any other settings and click 'Create bucket'.
+- Open the created bucket, go to the 'Properties' tab and turn on static website hosting (fill in index.html and error.html as defaults) and click save.
+- Open the 'Permissions' tab, locate the CORS configuration section and add the following code:
+
+``[
+    
+    {
+      "AllowedHeaders": [
+          "Authorization"
+      ],
+      "AllowedMethods": [
+          "GET"
+      ],
+      "AllowedOrigins": [
+          "*"
+      ],
+      "ExposeHeaders": []
+  }
+]``
+
+- Select the 'Bucket Policy' tab, click 'Edit' > 'Policy Generator'.
+- Choose 'S3 Bucket Policy' from the 'Select Type of Policy' dropdown.
+
+In 'Step 2: Add Statements', add the following settings:
+
+- Effect: Allow
+- Principal:  * 
+- Actions: GetObject
+- ARN: Bucket ARN (from S3 Bucket page)
+- Click 'Add Statement'.
+- Select 'Generate Policy'.
+- Copy the policy 
+
+Paste the generated policy into the Permissions > Bucket Policy area.
+- Add '/*' at the end of the 'Resource' key, and save.
+- Go to the 'Access Control List' section, and select 'List' next to 'Everyone'.
+
+#### AWS IAM (Identity and Access Management)
+- Search IAM 'Services' tab on the AWS Management Console and select.
+- Follow path 'User Groups' > 'Create New Group' > choose a name and click 'Create'.
+- Follow path 'Policies' > 'Create New Policy' > 'JSON' > 'Import Managed Policy' > search 'S3' > select 'AmazonS3FullAccess' > Click 'Import'.
+- Take the bucket ARN from 'S3 Permissions'
+- Delete the '*' from the 'Resource' key and add the following code into the area:
+
+"Resource": 
+``[
+    "{PASTED ARN}",
+    "{PASTED ARN}/*"
+]``
+
+- Follow path 'Next' > 'Review' > provide a name and  'Create Policy'.
+- Follow 'User Groups' >  Open the created group > 'Permissions' > 'Add Permissions' > 'Attach Policies' > search for the policy you created and click 'Add Permissions'.
+- Follow 'Users' > 'Add Users' > create a name and select 'Programmatic access' for the 'Access Type' option.
+- Click 'Next' and select the group you created.
+- Keep clicking 'Next' until you reach the 'Create user' button – create a user
+- Download the CSV file which contains the AWS_SECRET_ACCESS_KEY and your AWS_ACCESS_KEY_ID needed in the Heroku variables.
+- **This will be the only time that you will be able to access and download this file. If you don't download it, you'll have to start the AWS process again**
 
 ### Email
 
@@ -217,7 +279,7 @@ Forking results in a secondary branch of the site being created. The secondary b
 5. Once in your local IDE open a new terminal.
 6. Chose the working directory where you would like the cloned directory to be created.
 7. Type git clone into the terminal and paste the repository URL
-- $ git clone https://github.com/JayMacG51/odds---ends
+- $ git clone https://github.com/JanelleG51/odds---ends
 8. Press enter to finish the cloning process.
 
 All requirements will need to be reinstalled. You can do this in the terminal using pip3 install -r requirements.txt 
