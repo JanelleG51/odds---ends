@@ -5,21 +5,26 @@
 
 {% block content %}
 
-    <div class="row justify-content-center main-container">
-        <div class="col-12 col-md-10 col-xl-8 col-xxl-6 mx-auto">
-            <h1 class="">Contact Us</h1>
-            <hr class="">
-            <div class="row">
-                <div class="col-12 col-lg-5 mt-3">
-                    <p class="mb-4">Whether you're a customer or a winery or seller, please fill in the form below to contact us!</p>
-                    <form action="{% url 'contact' %}" method="POST">
-                        {% csrf_token %}
-                        {{ form|crispy }}
-                        <button class="btn">Send</button>
-                    </form>
-                </div>
-            </div>
+<div class="container mb-2">
+    <div class="row text-center">
+        <div class="col">
+            <hr class="heading-form-rule">
+            <h2 class="mb-4">Contact Us!</h2>
+            <hr class="heading-form-rule">
         </div>
     </div>
+
+    <div class="row justify-content-center">
+        <div class="col-12 col-lg-5 mt-3">
+            <p class="mb-4">Whether you're a customer or a winery or seller, please fill in the form below to contact
+                us!</p>
+            <form action="{% url 'contact' %}" method="POST">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <button class="btn">Send</button>
+            </form>
+        </div>
+    </div>
+</div>
 
 {% endblock %}

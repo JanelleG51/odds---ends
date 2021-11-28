@@ -2,22 +2,20 @@
 {% load static %}
 {% load bag_tools %}
 
+{% block extra_title %}Bag{% endblock %}
+
 {% block page_header %}
-<div class="container">
-    <div class="row">
-        <div class="col"></div>
-    </div>
-</div>
+
 {% endblock %}
 
 {% block content %}
 
 <div class="container mb-2">
-    <div class="row">
+    <div class="row text-center">
         <div class="col">
-            <hr>
+            <hr class="heading-form-rule">
             <h2 class="logo-font mb-4">Shopping Bag</h2>
-            <hr>
+            <hr class="heading-form-rule">
         </div>
     </div>
 
@@ -40,7 +38,8 @@
                     <tr>
                         <td class="p-3 w-25">
                             {% if item.case.image %}
-                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}{{ item.case.image }}" alt="{{ item.case.name }}">
+                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}{{ item.case.image }}"
+                                alt="{{ item.case.name }}">
                             {% else %}
                             <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ case.name }}">
                             {% endif %}
@@ -79,13 +78,14 @@
                                             </button>
                                         </div>
                                         {% if item.case.has_type %}
-                                                        <input type="hidden" name="case_type" value="{{ item.type }}">
-                                                    {% endif %}
+                                        <input type="hidden" name="case_type" value="{{ item.type }}">
+                                        {% endif %}
                                     </div>
                                 </div>
                             </form>
                             <a class="update-link text-info"><small>Update</small></a>
-                            <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}" data-case_type="{{ item.type }}"><small>Remove</small></a>
+                            <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}"
+                                data-case_type="{{ item.type }}"><small>Remove</small></a>
                         </td>
                         <td class="py-3">
                             <p class="my-0">£{{ item.case.price | calc_subtotal:item.quantity }}</p>
@@ -134,23 +134,24 @@
 
 {% block postloadjs %}
 {{ block.super }}
-    <script src="{% static 'wines/js/quantity.js' %}"></script>
-    <!-- Added directly to basket.html due to csrf token -->
-    <script>
-        // Remove item and reload on click
-        $('.remove-item').click(function(e) {
-            var csrfToken = "{{ csrf_token }}";
-            var itemId = $(this).attr('id').split('remove_')[1];
-            var type = $(this).data('case_type');
-            var url = `/bag/remove/${itemId}/`;
-            var data = {
-                'csrfmiddlewaretoken': csrfToken, 'case_type': type
-            };
+<script src="{% static 'wines/js/quantity.js' %}"></script>
+<!-- Added directly to basket.html due to csrf token -->
+<script>
+    // Remove item and reload on click
+    $('.remove-item').click(function (e) {
+        var csrfToken = "{{ csrf_token }}";
+        var itemId = $(this).attr('id').split('remove_')[1];
+        var type = $(this).data('case_type');
+        var url = `/bag/remove/${itemId}/`;
+        var data = {
+            'csrfmiddlewaretoken': csrfToken,
+            'case_type': type
+        };
 
-            $.post(url, data)
-            .done(function() {
+        $.post(url, data)
+            .done(function () {
                 location.reload();
             });
-        })
-    </script>
+    })
+</script>
 {% endblock %}
