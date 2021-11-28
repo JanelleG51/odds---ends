@@ -51,7 +51,7 @@ The target customer for this site is anyone who likes and enjoys wine but might 
 - Be notified by email when customers or wineries make contact using the [Contact](https://odds-and-ends.herokuapp.com/contact/) page.
 
 ## Design
-____
+
 ### Impression 
 
 The site is one of basic presentation meant to give the feel of a handwritten specials board that can be updated daily. The site offers quality wines at a discounted price and as such the stock can change depending on what is available. The impression of basic and changable but quality is what the developer wanted the site to deliver. 
@@ -188,13 +188,6 @@ STRIPE_PUBLIC_KEY | Stripe Dashboard > Developers tab > API Keys > Publishable k
 STRIPE_SECRET_KEY | Stripe Dashboard > Developers tab > API Keys > Secret key
 STRIPE_WH_SECRET | Stripe Dashboard > Developers tab > Webhooks > site endpoint > Signing secret
 
-
-
-Enable automatic deployment:
-
-- Click the Deploy tab
-- In the Automatic deploys section, choose the branch you want to deploy from then click Enable Automatic Deploys.
-
 ### AWS
 #### AWS S3 Bucket
 - Go to [AWS](https://aws.amazon.com/) and create an account 
@@ -260,7 +253,8 @@ Paste the generated policy into the Permissions > Bucket Policy area.
 - **This file will only appear once. If it is not downloaded and saved, the AWS process will require completion again**
 
 ### Email
-Email set up 
+#### Email set up
+
 The instructions below are for Gmail accounts:
 - In your IDE, in settings.py change the DEFAULT_FROM_EMAIL to your chosen email address.
 - In the Gmail account and open the 'Settings' tab.
@@ -275,8 +269,6 @@ The instructions below are for Gmail accounts:
 - Once all the variables have been set in Heroku, in the Deploy tab select ‘Manual Deploy' > choose the master branch and click 'Deploy Branch'.
 - The build log will show the build progress and completion.
 - Navigate to the ‘Deploy' tab and select 'Enable Automatic Deployment'. All Git Push commands will now deploy to Heroku.
-
-
 
 ## Forking
 Forking results in a secondary branch of the site being created. The secondary branch can be worked on simultaneously without the Master Branch being altered. The steps below should be followed:
