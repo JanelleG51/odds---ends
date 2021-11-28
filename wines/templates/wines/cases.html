@@ -40,7 +40,7 @@
                             <p class="lead mb-0 text-right">£{{ case.price }}</p>
                             {% if request.user.is_superuser %}
                             <small class="ml-3">
-                                <a class="text-right" href="{% url 'edit_case' case.id %}">Edit</a>
+                                <a class="edit-link text-right" href="{% url 'edit_case' case.id %}">Edit</a>
                             </small>
                             {% endif %}
                         </div>

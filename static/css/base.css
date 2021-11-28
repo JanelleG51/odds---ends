@@ -57,7 +57,17 @@ a:hover {
 .btn {
     color: #F3F4F6;
     background-color:#8E0413;
-    border: 1px solid ;
+    border: 1px solid;
+}
+
+.btn-cancel {
+    color: #8E0413;
+    background-color:#F3F4F6;
+    border: 1px solid black ;
+}
+
+.edit-link {
+    color: #004733;
 }
 
 .base-container {
