@@ -48,7 +48,7 @@
                         <td class="py-3">
                             <p class="my-0"><strong>{{ item.case.name }}</strong></p>
                             <p class="my-0"><strong>Type:
-                                </strong>{% if item.case.has_type %}{{ item.type|upper }}{% else %}N/A{% endif %}</p>
+                                </strong>{{ item.type|upper }}</p>
                             <p class="my-0 small text-muted">SKU: {{ item.case.sku|upper }}</p>
                         </td>
                         <td class="py-3">
