@@ -9,6 +9,7 @@ body {
     height: 100%;
     color: black;
     font-family: 'Concert One', sans-serif;
+    font-size: 1rem;
 }
 
 a {
@@ -114,9 +115,7 @@ a:hover {
 
 .allauth-form-inner-content p {
     margin-top: 1.5rem;
-    /* mt-4 */
     color: #6c757d;
-    /* text-secondary */
 }
 
 .allauth-form-inner-content input {
@@ -124,12 +123,9 @@ a:hover {
     border-radius: 0;
 }
 
-.allauth-form-inner-content label:not([for='id_remember']) {
-    display: none;
-}
-
 .allauth-form-inner-content input::placeholder {
     color: #aab7c4;
+    font-size: 0.85rem;
 }
 
 .allauth-form-inner-content button,
@@ -137,19 +133,20 @@ a:hover {
     /* btn */
     display: inline-block;
     font-weight: 400;
-    color: #fff;
+    color: #F3F4F6;
     text-align: center;
     vertical-align: middle;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    background-color: #000;
-    border: 1px solid #000;
+    background-color:#8E0413;
+    border: 1px solid;
     padding: .375rem .75rem;
     font-size: 1rem;
     line-height: 1.5;
     border-radius: 0;
+    
 
     /* standard bootstrap btn transitions */
     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
@@ -163,7 +160,7 @@ a:hover {
 }
 
 .allauth-form-inner-content a {
-    color: #17a2b8;
+    color: #004733;
     /* text-info */
 }
 
@@ -196,7 +193,13 @@ a:hover {
 }
 
 .form-control {
-    padding: 0.01rem 0.375rem !important;  
+    padding: 0.01rem 0.375rem !important;
+  
+}
+
+.authentication-container h2,
+.profile-container h2 {
+    font-size: 1.2rem;
 }
 
 /* footer */
