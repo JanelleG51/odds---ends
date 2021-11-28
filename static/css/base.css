@@ -33,7 +33,8 @@ hr {
 
 h1,
 h2,
-.branding {
+.branding,
+.bag-link {
     font-family: 'Permanent Marker', sans-serif;
 }
 
@@ -44,6 +45,12 @@ a:hover {
 .logo-size {
     font-size: 4rem;
 
+}
+
+.nav-link {
+    color:  #004733 !important;
+    font-size: 1.20rem !important;
+    font-family: 'Permanent Marker';
 }
 
 .text-red {
