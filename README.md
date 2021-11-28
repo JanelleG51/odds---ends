@@ -257,9 +257,26 @@ Paste the generated policy into the Permissions > Bucket Policy area.
 - Click 'Next' and select the group you created.
 - Keep clicking 'Next' until you reach the 'Create user' button – create a user
 - Download the CSV file which contains the AWS_SECRET_ACCESS_KEY and your AWS_ACCESS_KEY_ID needed in the Heroku variables.
-- **This will be the only time that you will be able to access and download this file. If you don't download it, you'll have to start the AWS process again**
+- **This file will only appear once. If it is not downloaded and saved, the AWS process will require completion again**
 
 ### Email
+Email set up 
+The instructions below are for Gmail accounts:
+- In your IDE, in settings.py change the DEFAULT_FROM_EMAIL to your chosen email address.
+- In the Gmail account and open the 'Settings' tab.
+- Go to 'Accounts and Imports' > 'Other Google Account Settings'.
+- Go to the 'Security' tab and open 'Signing in to Google'.
+- Select '2-step Verification', click 'Get Started' and turn on 2-step verification following the instructions.
+- Go to 'Security' > 'Signing in to Google' > 'App Passwords'.
+- Set 'App' to 'Mail', 'Device' to Other, and name Django.
+- Set the password to EMAIL_HOST_PASS in the Heroku variables.
+
+#### Final Deployment
+- Once all the variables have been set in Heroku, in the Deploy tab select ‘Manual Deploy' > choose the master branch and click 'Deploy Branch'.
+- The build log will show the build progress and completion.
+- Navigate to the ‘Deploy' tab and select 'Enable Automatic Deployment'. All Git Push commands will now deploy to Heroku.
+
+
 
 ## Forking
 Forking results in a secondary branch of the site being created. The secondary branch can be worked on simultaneously without the Master Branch being altered. The steps below should be followed:
