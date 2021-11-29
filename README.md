@@ -52,29 +52,28 @@ The target customer for this site is anyone who likes and enjoys wine but might 
 
 ## Design
 
-### Impression 
+## Impression 
 
 The site is one of basic presentation meant to give the feel of a handwritten specials board that can be updated daily. The site offers quality wines at a discounted price and as such the stock can change depending on what is available. The impression of basic and changable but quality is what the developer wanted the site to deliver. 
 
-### Typography
+## Typography
 
 To acheive the handwritten specials board feel, the font [Permanent Marker](https://fonts.google.com/specimen/Permanent+Marker?query=perm) was chosen for the logo and headings. 
 
 The body of the site use [Concert One](https://fonts.google.com/specimen/Concert+One?query=concert). The curved edges of the lettering wth no sharp edges complements the Permanent Marker font and is in keeping with the overall theme.
 
-### Colour Scheme 
+## Colour Scheme 
 The colours chosen for the site are based on the colours of the wines, white, red, pink hues and green to reflect the colour of some wine bottles. The core text colour is black:
 
 ![Coolors Pallete](readme_docs/colour_pallete.png)
-### Imagery
+## Imagery
 
 Imagery for this site is very much focussed on wine and vineyards with the majority of images being of the wines on offer. The theme is based around wine glasses, grapes, bottles and people enjoying wine demostrated on the [Home](https://odds-and-ends.herokuapp.com/) page and the [Cases](https://odds-and-ends.herokuapp.com/wines/cases/) page.
 
-### Wireframes
+## Wireframes
 
 
-## Features 
-___
+# Features 
 
 The features a user can access are dependant of their permission levels with only some features limited to registration or administrators:
 
@@ -97,9 +96,8 @@ Profile | No|Yes|Yes
 Sign Out | No|Yes|Yes
 Contact Us | Yes|Yes|Yes
 
-----
 
-### Wines Page 
+## Wines Page 
 All wines held in stock can be viewed on the the wine pages which can be accessed usung the navigation options at the top of the page. Users can view [All Wine](https://odds-and-ends.herokuapp.com/wines/), [White Wines](https://odds-and-ends.herokuapp.com/wines/?category=white), [Red Wines](https://odds-and-ends.herokuapp.com/wines/?category=red), [Rose Wines](https://odds-and-ends.herokuapp.com/wines/?category=rose) and [Sparkling and Champagnes](https://odds-and-ends.herokuapp.com/wines/?category=sparkling). Wines on each page can be  sorted and filtered by:
 
 - Country
@@ -107,9 +105,9 @@ All wines held in stock can be viewed on the the wine pages which can be accesse
 - Winery 
 - Price
 - Year 
-- Rating 
+- Rating
 
-### Wines Detail Page
+## Wines Detail Page
 Users can open the wine details page to view to [individual wine](https://odds-and-ends.herokuapp.com/wines/wine/172/) details:
 - Colour
 - Name
@@ -120,7 +118,8 @@ Users can open the wine details page to view to [individual wine](https://odds-a
 
 From here, user's can following links to **Keep Browsing Wines** or **Buy Our Cases**.
 
-### Cases Page 
+
+## Cases Page 
 The cases available to users to buy are accessed through the [Cases](https://odds-and-ends.herokuapp.com/wines/cases/) page. From here users can select:
 - [Basic Case](https://odds-and-ends.herokuapp.com/wines/case/1/)
 - [Premium Case](https://odds-and-ends.herokuapp.com/wines/case/2/)
@@ -128,13 +127,13 @@ The cases available to users to buy are accessed through the [Cases](https://odd
 
 The name and price is shown for each case.
 
-### Bag Page 
+## Bag Page 
 
 The bag page contains the details of all cases in the user's bag and they have the ability to update quantities and remove cases they would no longer like. From here user's can go to **Secure Checkout** or **Keep Shopping**.
 
 If the [Bag](https://odds-and-ends.herokuapp.com/bag/) is accessed when empty, user's are informed **Your Bag is Empty** and have the option to **Keep Shopping**.
 
-### Case Details Page 
+## Case Details Page 
 
 The user's can view the name and price of each case.
 
@@ -146,7 +145,7 @@ Each case has the option to select which type of the case the buyer would like:
 
 From here, user's can adjust the quantity they would like, **Add To Bag** or **Keep Shopping**
 
-### Checkout Page
+## Checkout Page
 From the [Checkout Page](https://odds-and-ends.herokuapp.com/checkout/) user's can:
 - Checkout as guest is they are not registered user's 
 - **Create an Account** or **Login**
@@ -157,7 +156,7 @@ From the [Checkout Page](https://odds-and-ends.herokuapp.com/checkout/) user's c
 
 Toast notifications are received for each step and on conmpletion the user is redirected to the **Checkout Success** page, which contains a summary of their order and a confirmation email is sent.
 
-### Profile Page
+## Profile Page
 
 All user's have the option to [Register](https://odds-and-ends.herokuapp.com/accounts/signup/) if they wish but **registration is not required to complete a purchase** . To register user's must provide:
 - A Username 
@@ -173,14 +172,14 @@ Once registered and verified, user's can then access their **Profile** page whic
 - Save default delivery information to their profile from the checkout page
 - Update any previously saved user details
 
-### Contact Page 
+
+## Contact Page 
 All site user's can get in touch with the site admin through the [Contact Page](https://odds-and-ends.herokuapp.com/contact/), which can be accessed from the sites **Home Page** and site **Footer**. All emails are sent to the admin's registered email account.
 
----
 
 ## Emails and Notifications
 
-### Emails
+## Emails
 User's receive emails to their when chosen email address when:
 - They register for an account to verify their email
 - When they have forgotten their password and need to reset
@@ -188,7 +187,7 @@ User's receive emails to their when chosen email address when:
 - When contacting the admin using the site **Contact Page** 
 
 ## Notifications
-### Toasts 
+## Toasts 
 Toast notifications are used in this site to keep user's informed of actions being carried out. Toasts appear for:
 
 * Successes
@@ -220,37 +219,51 @@ From **All Wines** and **All Cases** admin user's can:
 - Edit(Update) cases and wines from the **All Wines** and **All Cases** pages by accessing the edit link. The item information appears on the form and all edits are sent to the database and updated immediately on the frontend.
 - Delete cases and wines by accessing the **Wine Details** and **Case Details** pages. On clicking the delete button, as part of defensive design, a confirmation modal appears allowing the action to either be cancelled or confirmed. Once confirmed, the item is deleted from the database and all changes are reflected immediately on the frontend 
 
+## Defensive Design
+
+Defensive design measures have been put in place for the following:
+
+Measure | Result
+----    | ------
+Delete Confirmation | Admin user's cannot delete an item without first confirming the action
+Form Validation | All information in forms must meet the set criteria in terms of number of characters, email confirmation and password confirmation. Any fields that do not meet the criteria will prevent form submission and the error will be made clear to the user
+Login authentication | The @login_required decorator has been used to secure pages from those without the correct authentication. This prevents unauthenticated users accessing site content using forced URL paths and provides notifcation of prevention and redirection to the appropriate page
+Custom Error Page | 404 (***Page Does Not Exist***) and 500 (***Interal Server Error***) pages appear to inform user's of either error and allows them to navigate back to the site without using the back button
+Case Quantity | Users are limited to adding 10 of each case and cannot add a quantity of zero 
+
+
 
 ## Features left to implement 
-___
 
-### Database
+
+
+## Database
 The build of this site used two relational databases. SQLite was used during the intial development of the site with Postgres being ustlised once the site was moved to deployment on Heroku. The database models and their relationships are illustrated and described below:
 
 ![Database Schema](readme_docs/database_schema.png)
 
-#### User Model
+## User Model
 - Holds a user’s registration information provided at sign up.
 - Information from the User Model is used to create the UserProfile.
-#### UserProfile
+## UserProfile
 - Stores the user’s delivery and order history.
 - Takes information from the User model to create the profile.
 - The Order model receives this information to create the order history on the profile page.
 
-#### Wines Model
+## Wines Model
 - Stores the details of all wines currently held in stock and available as part of the case selections. 
 - Information is pulled from the categories model to supply the wine colour.
-#### Cases Model
+## Cases Model
 - Stores the details of all cases currently for sale on the site (case category, type and price).
 - Information is pulled from the categories model to supply the case name.
 - The OrderLineItem model receives the category name to generate the correct order.
-#### Categories Model
+## Categories Model
 - Contains all categories for both the wines and cases models.
-#### OrderLineItem
+## OrderLineItem
 - Stores the case details that have been added to the user’s bag.
 - Takes information from the cases model to add cases to the user’s order.
 - Information from the OrdeLineItem is sent to the Order model to update the order.
-#### Order
+## Order
 - Stores all of the order information for each purchase made by the user.
 - Pulls information from the OrderLineItem model to add a case/s to the order.
 - The order detail are used in the UserProfile model to attach the order to the user’s profile.
@@ -262,11 +275,11 @@ The build of this site used two relational databases. SQLite was used during the
 The developer used [W3C HTML Validator](https://validator.w3.org/), [W3C CSS Validator](https://jigsaw.w3.org/css-validator/), [JSHint Validator](https://jshint.com/) [PEP8 Validator](http://pep8online.com/) for code validation.
 
 
- ### Manual Testing
+ # Manual Testing
 
 The result of manual testing for the site are below:
 
-![testing]()
+[Testing](TESTING.md)
 
 
 ## Technologies Used 
@@ -284,7 +297,7 @@ Python Modules:
 - [Font Awesome](https://fontawesome.com/) - icons displayed throughout the site are taken from Font Awesome.
 
 ## Configuration
-### Deployment to Heroku
+## Deployment to Heroku
 #### Requirements.txt
 Heroku deployment requires a populated file of all dependencies used during the site build:
 - In the GitPod terminal, type pip3 freeze --local > requirements.txt to create your requirements file.
@@ -336,8 +349,8 @@ STRIPE_PUBLIC_KEY | Stripe Dashboard > Developers tab > API Keys > Publishable k
 STRIPE_SECRET_KEY | Stripe Dashboard > Developers tab > API Keys > Secret key
 STRIPE_WH_SECRET | Stripe Dashboard > Developers tab > Webhooks > site endpoint > Signing secret
 
-### AWS
-#### AWS S3 Bucket
+## AWS
+## AWS S3 Bucket
 - Go to [AWS](https://aws.amazon.com/) and create an account 
 - From the 'Services' tab on the AWS Management Console, search 'S3' and select it.
 - Click 'Create a new bucket', provide a unique name and choose the region closest to you.
@@ -379,7 +392,7 @@ Paste the generated policy into the Permissions > Bucket Policy area.
 - Add '/*' at the end of the 'Resource' key, and save.
 - Go to the 'Access Control List' section, and select 'List' next to 'Everyone'.
 
-#### AWS IAM (Identity and Access Management)
+## AWS IAM (Identity and Access Management)
 - Search IAM 'Services' tab on the AWS Management Console and select.
 - Follow path 'User Groups' > 'Create New Group' > choose a name and click 'Create'.
 - Follow path 'Policies' > 'Create New Policy' > 'JSON' > 'Import Managed Policy' > search 'S3' > select 'AmazonS3FullAccess' > Click 'Import'.
