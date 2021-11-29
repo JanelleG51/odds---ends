@@ -4,7 +4,38 @@ At Odds & Ends we never like to see a good bottle of wine being neglected, so it
 
 You can view the live site [here.](https://odds-and-ends.herokuapp.com/)
 
-![amiresponsive]()
+
+
+  * [UX](#ux)
+    + [Strategy](#strategy)
+    + [Target Consumer](#target-consumer)
+    + [User Stories](#user-stories)
+      
+  * [Design](#design)
+  * [Impression](#impression)
+  * [Typography](#typography)
+  * [Colour Scheme](#colour-scheme)
+  * [Imagery](#imagery)
+  * [Wireframes](#wireframes)
+- [Features](#features) 
+- [Testing](#testing)
+  * [Manual Testing](#manual-testing)
+  * [Technologies Used](#technologies-used)
+  * [Configuration](#configuration)
+  * [Deployment to Heroku](#deployment-to-heroku) 
+    + [Create application:](#create-application-)
+    + [Heroku Postgres Database](#heroku-postgres-database)
+    + [Set environment variables:](#set-environment-variables-)
+  * [AWS](#aws)
+  * [AWS S3 Bucket](#aws-s3-bucket)
+  * [AWS IAM (Identity and Access Management)](#aws-iam--identity-and-access-management-)
+    + [Email](#email)
+      - [Email set up](#email-set-up)
+      - [Final Deployment](#final-deployment)
+  * [Forking](#forking)
+  * [Cloning](#cloning)
+  * [Credits](#credits)
+    
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
@@ -85,6 +116,7 @@ Feature | All Users | Registered Users (Logged in) | Administrators (Logged in) 
 [Sign in](https://odds-and-ends.herokuapp.com/accounts/login/)  | Yes|No|No
 [All Wines](https://odds-and-ends.herokuapp.com/wines/)  | Yes|Yes|Yes
 [Red Wines](https://odds-and-ends.herokuapp.com/wines/?category=red) | Yes|Yes|Yes
+[White Wines](https://odds-and-ends.herokuapp.com/wines/?category=white) | Yes |Yes|Yes
 [Rose Wines](https://odds-and-ends.herokuapp.com/wines/?category=rose) | Yes|Yes|Yes
 [Sparkling and Champagne](https://odds-and-ends.herokuapp.com/wines/?category=sparkling) | Yes|Yes|Yes
 [Cases](https://odds-and-ends.herokuapp.com/wines/cases/)  | Yes|Yes|Yes
@@ -275,14 +307,16 @@ The build of this site used two relational databases. SQLite was used during the
 
 
 
-## Testing
+# Testing
 
 The developer used [W3C HTML Validator](https://validator.w3.org/), [W3C CSS Validator](https://jigsaw.w3.org/css-validator/), [JSHint Validator](https://jshint.com/) [PEP8 Validator](http://pep8online.com/) for code validation.
 
+Results can be found through the Testing link below.
 
- # Manual Testing
 
-The result of manual testing for the site are below:
+## Manual Testing
+
+The result of manual testing for the site can be found in the Testing docuemnt below:
 
 [Testing](TESTING.md)
 
@@ -462,8 +496,18 @@ All requirements will need to be reinstalled. You can do this in the terminal us
 ## Credits
 
 ### Content
+
+The developer took the wine dataset from [Kaggle](https://www.kaggle.com/budnyak/wine-rating-and-price), which provided all of the wine information content on this site but not the images.
+
+The matching individual wine images for this site were taken from [Vivino](https://www.vivino.com/GB/en) and the developer stresses that these images are being used for **education and assessment purposes only**
+
+All other images (6) used on the site were taken from [Unsplash](https://unsplash.com/s/photos/wine) 
  
 ### Code
+
+The developer gives credit to the Boutique Ado walkthrough project hosted by the Code Institute and presented by Chris Zielinski - this site was adapted to requirement.
+
+The developer also referred to the [Django Documentation](https://docs.djangoproject.com/en/3.2/) several times throughout the process to understand static files, deployment and modelling. 
 
 ### Acknowledgements
 
