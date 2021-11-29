@@ -90,7 +90,8 @@ def case_detail(request, case_id):
 def add_wine(request):
     """ Add a wines to the store """
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry, you do not have permissions to do that.')
+        messages.error(request, 'Sorry, you do not \
+            have permissions to do that.')
         return redirect(reverse('home'))
 
     if request.method == 'POST':
@@ -101,7 +102,8 @@ def add_wine(request):
             return redirect(reverse('wine_detail', args=[wine.id]))
         else:
             messages.error(
-                request, 'Failed to add wine. Please ensure the form is valid.')
+                request, 'Failed to add wine. \
+                    Please ensure the form is valid.')
     else:
         form = WineForm()
 
@@ -117,7 +119,8 @@ def add_wine(request):
 def add_case(request):
     """ Add a cases to the store """
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry, you do not have permissions to do that.')
+        messages.error(request, 'Sorry, \
+            you do not have permissions to do that.')
         return redirect(reverse('home'))
 
     if request.method == 'POST':
@@ -128,7 +131,8 @@ def add_case(request):
             return redirect(reverse('case_detail', args=[case.id]))
         else:
             messages.error(
-                request, 'Failed to add case. Please ensure the form is valid.')
+                request, 'Failed to add case. \
+                    Please ensure the form is valid.')
     else:
         form = CaseForm()
     template = 'wines/add_case.html'
@@ -143,7 +147,8 @@ def add_case(request):
 def edit_case(request, case_id):
     """ Edit a case in the store """
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry, you do not have permissions to do that.')
+        messages.error(request, 'Sorry, you do not \
+            have permissions to do that.')
         return redirect(reverse('home'))
 
     case = get_object_or_404(Case, pk=case_id)
@@ -155,7 +160,8 @@ def edit_case(request, case_id):
             return redirect(reverse('case_detail', args=[case.id]))
         else:
             messages.error(
-                request, 'Failed to update case. Please ensure the form is valid.')
+                request, 'Failed to update case. \
+                    Please ensure the form is valid.')
     else:
         form = CaseForm(instance=case)
         messages.info(request, f'You are editing the {case.name} case')
@@ -173,7 +179,8 @@ def edit_case(request, case_id):
 def edit_wine(request, wine_id):
     """ Edit a wine in the store """
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry, you do not have permissions to do that.')
+        messages.error(request, 'Sorry, you do not \
+            have permissions to do that.')
         return redirect(reverse('home'))
 
     wine = get_object_or_404(Wine, pk=wine_id)
@@ -185,7 +192,8 @@ def edit_wine(request, wine_id):
             return redirect(reverse('wine_detail', args=[wine.id]))
         else:
             messages.error(
-                request, 'Failed to update wine. Please ensure the form is valid.')
+                request, 'Failed to update wine. \
+                    Please ensure the form is valid.')
     else:
         form = WineForm(instance=wine)
         messages.info(request, f'You are editing {wine.name}')
@@ -203,7 +211,8 @@ def edit_wine(request, wine_id):
 def delete_wine(request, wine_id):
     """ Delete a wine from the store """
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry, you do not have permissions to do that.')
+        messages.error(request, 'Sorry, \
+            you do not have permissions to do that.')
         return redirect(reverse('home'))
 
     wine = get_object_or_404(Wine, pk=wine_id)
@@ -216,7 +225,8 @@ def delete_wine(request, wine_id):
 def delete_case(request, case_id):
     """ Delete a case from the store """
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry, you do not have permissions to do that.')
+        messages.error(request, 'Sorry, you do not have \
+            permissions to do that.')
         return redirect(reverse('home'))
 
     case = get_object_or_404(Case, pk=case_id)

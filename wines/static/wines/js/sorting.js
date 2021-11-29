@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 $('#sort-selector').change(function() {
     var selector = $(this);
     var currentUrl = new URL(window.location);
@@ -20,5 +21,5 @@ $('#sort-selector').change(function() {
 });
 
 $('.btt-link').click(function(e) {
-    window.scrollTo(0,0)
+    window.scrollTo(0,0);
 });

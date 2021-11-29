@@ -1,16 +1,18 @@
-from .models import Order, OrderLineItem
-from .forms import OrderForm
-from bag.contexts import bag_contents
+import json
+import stripe
+
+from django.shortcuts import (render, redirect,
+                              reverse, get_object_or_404, HttpResponse)
+
+from django.conf import settings
+from django.views.decorators.http import require_POST
+from django.contrib import messages
+from wines.models import Case
 from profiles.forms import UserProfileForm
 from profiles.models import UserProfile
-from wines.models import Case
-from django.conf import settings
-from django.contrib import messages
-from django.views.decorators.http import require_POST
-import stripe
-import json
-
-from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+from bag.contexts import bag_contents
+from .models import Order, OrderLineItem
+from .forms import OrderForm
 
 
 @require_POST
@@ -67,17 +69,19 @@ def checkout(request):
                         )
                         order_line_item.save()
                     else:
-                        for type, quantity in item_data['items_by_type'].items():
+                        for a_type, quantity in \
+                                item_data['items_by_type'].items():
                             order_line_item = OrderLineItem(
                                 order=order,
                                 case=case,
                                 quantity=quantity,
-                                case_type=type,
+                                case_type=a_type,
                             )
                             order_line_item.save()
                 except Case.DoesNotExist:
                     messages.error(request, (
-                        "One of the cases in your bag wasn't found in our database."
+                        "One of the cases in your bag wasn't \
+                            found in our database."
                         "Please call us for assistance!")
                     )
                     order.delete()
@@ -126,7 +130,7 @@ def checkout(request):
             order_form = OrderForm()
 
     if not stripe_public_key:
-        message.warning(request, 'Stripe public key is missing. \
+        messages.warning(request, 'Stripe public key is missing. \
             Did you forget to set it in your environment?')
 
     template = 'checkout/checkout.html'

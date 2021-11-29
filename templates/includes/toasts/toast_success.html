@@ -23,7 +23,7 @@
                     {% if item.case.image %}
                     <img class="w-100" src="{{ MEDIA_URL }}{{ item.case.image }}" alt="{{ case.name }}">
                     {% else %}
-                    <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ case.name }}">
+                    <img class="w-100" src="{{ MEDIA_URL }}{{ noimage.png }}" alt="{{ case.name }}">
                     {% endif %}
                 </div>
                 <div class="col-9">
