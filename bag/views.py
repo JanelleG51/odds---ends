@@ -1,9 +1,8 @@
-from django.shortcuts import render, redirect, reverse, HttpResponse, get_object_or_404
+from django.shortcuts import (
+    render, redirect, reverse, HttpResponse, get_object_or_404)
 from django.contrib import messages
 
 from wines.models import Case
-
-# Create your views here.
 
 
 def view_bag(request):
@@ -28,7 +27,8 @@ def add_to_bag(request, case_id):
             if a_type in bag[case_id]['items_by_type'].keys():
                 bag[case_id]['items_by_type'][a_type] += quantity
                 messages.success(
-                    request, f'Updated case {a_type.upper()} {case.name} quantity to {bag[case_id]["items_by_type"][a_type]}')
+                    request, f'Updated case {a_type.upper()} {case.name} \
+                        quantity to {bag[case_id]["items_by_type"][a_type]}')
             else:
                 bag[case_id]['items_by_type'][a_type] = quantity
         else:
@@ -64,7 +64,8 @@ def adjust_bag(request, case_id):
         if quantity > 0:
             bag[case_id]['items_by_type'][a_type] = quantity
             messages.success(
-                request, f'Updated {a_type.upper()} {case.name} case quantity to {bag[case_id]["items_by_type"][a_type]}')
+                request, f'Updated {a_type.upper()} {case.name} \
+                    case quantity to {bag[case_id]["items_by_type"][a_type]}')
         else:
             del bag[case_id]['items_by_type'][a_type]
             if not bag[case_id]['items_by_type']:

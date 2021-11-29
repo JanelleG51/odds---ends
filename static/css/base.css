@@ -19,10 +19,6 @@ a {
 
 }
 
-a:hover {
-    color: #DF8080;
-}
-
 hr {
     border-top: 1px solid;
     color: #8E0413;
@@ -43,6 +39,10 @@ h2,
 .logo-size {
     font-size: 4rem;
 
+}
+
+a:hover {
+    color: #DF8080;
 }
 
 .nav-link {
@@ -240,9 +240,9 @@ footer p {
 
 /* media queries */
 
-@media(max-width: 475px){
+@media(max-width: 375px){
 
-body {
+.table-font {
     font-size: .75rem;
     }
 
