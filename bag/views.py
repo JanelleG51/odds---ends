@@ -55,18 +55,18 @@ def adjust_bag(request, case_id):
 
     case = get_object_or_404(Case, pk=case_id)
     quantity = int(request.POST.get('quantity'))
-    type = None
+    a_type = None
     if 'case_type' in request.POST:
-        type = request.POST['case_type']
+        a_type = request.POST['case_type']
     bag = request.session.get('bag', {})
 
     if type:
         if quantity > 0:
-            bag[case_id]['items_by_type'][type] = quantity
+            bag[case_id]['items_by_type'][a_type] = quantity
             messages.success(
-                request, f'Updated {type.upper()} {case.name} case quantity to {bag[case_id]["items_by_type"][type]}')
+                request, f'Updated {a_type.upper()} {case.name} case quantity to {bag[case_id]["items_by_type"][a_type]}')
         else:
-            del bag[case_id]['items_by_type'][type]
+            del bag[case_id]['items_by_type'][a_type]
             if not bag[case_id]['items_by_type']:
                 bag.pop(case_id)
             messages.success(
@@ -91,17 +91,17 @@ def remove_from_bag(request, case_id):
 
     try:
         case = get_object_or_404(Case, pk=case_id)
-        type = None
+        a_type = None
         if 'case_type' in request.POST:
-            type = request.POST['case_type']
+            a_type = request.POST['case_type']
         bag = request.session.get('bag', {})
 
-        if type:
-            del bag[case_id]['items_by_type'][type]
+        if a_type:
+            del bag[case_id]['items_by_type'][a_type]
             if not bag[case_id]['items_by_type']:
                 bag.pop(case_id)
             messages.success(
-                request, f'Removed {type.upper()} {case.name} from your bag')
+                request, f'Removed {a_type.upper()} {case.name} from your bag')
 
         else:
             bag.pop(case_id)
