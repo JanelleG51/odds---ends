@@ -63,14 +63,152 @@ To acheive the handwritten specials board feel, the font [Permanent Marker](http
 The body of the site use [Concert One](https://fonts.google.com/specimen/Concert+One?query=concert). The curved edges of the lettering wth no sharp edges complements the Permanent Marker font and is in keeping with the overall theme.
 
 ### Colour Scheme 
+The colours chosen for the site are based on the colours of the wines, white, red, pink hues and green to reflect the colour of some wine bottles. The core text colour is black:
 
+![Coolors Pallete](readme_docs/colour_pallete.png)
 ### Imagery
+
+Imagery for this site is very much focussed on wine and vineyards with the majority of images being of the wines on offer. The theme is based around wine glasses, grapes, bottles and people enjoying wine demostrated on the [Home](https://odds-and-ends.herokuapp.com/) page and the [Cases](https://odds-and-ends.herokuapp.com/wines/cases/) page.
 
 ### Wireframes
 
 
 ## Features 
 ___
+
+The features a user can access are dependant of their permission levels with only some features limited to registration or administrators:
+
+Feature | All Users | Registered Users (Logged in) | Administrators (Logged in) |
+------- | ----------| ---------------------------- | ---------------------------|
+Navigation Bar | Yes|Yes|Yes
+Bag  | Yes|Yes|Yes
+Register | Yes|No|No
+Sign in  | Yes|No|No
+All Wines  | Yes|Yes|Yes
+Red Wines | Yes|Yes|Yes
+Rose Wines | Yes|Yes|Yes
+Sparkling and Champagne | Yes|Yes|Yes
+Cases  | Yes|Yes|Yes
+Add Wines | No|No|Yes
+Edit Wines | No|No|Yes
+Add Cases | No|No|Yes
+Edit Cases | No|No|Yes
+Profile | No|Yes|Yes
+Sign Out | No|Yes|Yes
+Contact Us | Yes|Yes|Yes
+
+----
+
+### Wines Page 
+All wines held in stock can be viewed on the the wine pages which can be accessed usung the navigation options at the top of the page. Users can view All Wine, White Wines, Red Wines, Rose Wines and Sparkling and Champagnes. Wines on each page can be  sorted and filtered by:
+
+- Country
+- Region 
+- Winery 
+- Price
+- Year 
+- Rating 
+
+### Wines Detail Page
+Users can open the wine details page to view to [individual wine](https://odds-and-ends.herokuapp.com/wines/wine/172/) details:
+- Colour
+- Name
+- Price 
+- Region 
+- Country
+- Rating 
+
+From here, user's can following links to **Keep Browsing Wines** or **Buy Our Cases**.
+
+### Cases Page 
+The cases available to users to buy are accessed through the [Cases](https://odds-and-ends.herokuapp.com/wines/cases/) page. From here users can select:
+- [Basic Case](https://odds-and-ends.herokuapp.com/wines/case/1/)
+- [Premium Case](https://odds-and-ends.herokuapp.com/wines/case/2/)
+- [Superior Case](https://odds-and-ends.herokuapp.com/wines/case/3/)
+
+The name and price is shown for each case.
+
+### Bag Page 
+
+The bag page contains the details of all cases in the user's bag and they have the ability to update quantities and remove cases they would no longer like. From here user's can go to **Secure Checkout** or **Keep Shopping**.
+
+If the [Bag](https://odds-and-ends.herokuapp.com/bag/) is accessed when empty, user's are informed **Your Bag is Empty** and have the option to **Keep Shopping**.
+
+### Case Details Page 
+
+The user's can view the name and price of each case.
+
+Each case has the option to select which type of the case the buyer would like:
+- All Red
+- All White
+- All Rose
+- Mixed 
+
+From here, user's can adjust the quantity they would like, **Add To Bag** or **Keep Shopping**
+
+### Checkout Page
+From the [Checkout Page](https://odds-and-ends.herokuapp.com/checkout/) user's can:
+- Checkout as guest is they are not registered user's 
+- **Create an Account** or **Login**
+- Enter their Name, Email and Delivery details 
+- Use the delivery details stored in their profile if they are a registered user
+- If the user is not ready to pay they have the option to **Adjust Bag**
+- When they are ready to pay they can **Complete Order** and their payment is processed using Stripe payment service provider
+
+Toast notifications are received for each step and on conmpletion the user is redirected to the **Checkout Success** page, which contains a summary of their order and a confirmation email is sent.
+
+### Profile Page
+
+All user's have the option to [Register](https://odds-and-ends.herokuapp.com/accounts/signup/) if they wish but **registration is not required to complete a purchase** . To register user's must provide:
+- A Username 
+- An Email Address 
+- Email Address (again)
+- A Password
+- Password (again)
+
+All of which must be unique to the user and on submission an email is sent to the user's email address to **Verify Your Email**. Once the user verifies their email they are able to log into the site. 
+
+Once registered and verified, user's can then access their **Profile** page which allows them to:
+- Access all previous orders
+- Save default delivery information to their profile from the checkout page
+- Update any previously saved user details
+
+### Contact Page 
+All site user's can get in touch with the site admin through the [Contact Page](https://odds-and-ends.herokuapp.com/contact/), which can be accessed from the sites **Home Page** and site **Footer**. All emails are sent to the admin's registered email account.
+
+---
+
+## Emails and Notifications
+
+### Emails
+User's receive emails to their when chosen email address when:
+- They register for an account to verify their email
+- When they have forgotten their password and need to reset
+- After placing an order as an order confirmation 
+- When contacting the admin using the site **Contact Page** 
+
+## Notifications
+### Toasts 
+Toast notifications are used in this site to keep user's informed of actions being carried out. Toasts appear for:
+
+* Successes
+    * Sucessfully registering 
+    * Signing in or out
+    * Adding cases to the bag
+    * Updating cases in the bag
+    * Completing a purchase 
+    * Using the Conact form
+    * After successfuly adding, editing, deleting wines or cases
+
+* Errors
+    * Accessing admin only functions 
+
+* Warnings
+
+* Information 
+    * Revisiting previous orders 
+    * What wine or case is being edited
+
 
 ## Features left to implement 
 ___
@@ -105,7 +243,6 @@ The build of this site used two relational databases. SQLite was used during the
 - Stores all of the order information for each purchase made by the user.
 - Pulls information from the OrderLineItem model to add a case/s to the order.
 - The order detail are used in the UserProfile model to attach the order to the user’s profile.
-
 
 
 
