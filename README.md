@@ -79,22 +79,22 @@ The features a user can access are dependant of their permission levels with onl
 
 Feature | All Users | Registered Users (Logged in) | Administrators (Logged in) |
 ------- | ----------| ---------------------------- | ---------------------------|
-Navigation Bar | Yes|Yes|Yes
-Bag  | Yes|Yes|Yes
-Register | Yes|No|No
-Sign in  | Yes|No|No
-All Wines  | Yes|Yes|Yes
-Red Wines | Yes|Yes|Yes
-Rose Wines | Yes|Yes|Yes
-Sparkling and Champagne | Yes|Yes|Yes
-Cases  | Yes|Yes|Yes
+[Navigation Bar](https://odds-and-ends.herokuapp.com/) | Yes|Yes|Yes
+[Bag](https://odds-and-ends.herokuapp.com/bag/)  | Yes|Yes|Yes
+[Register](https://odds-and-ends.herokuapp.com/accounts/signup/) | Yes|No|No
+[Sign in](https://odds-and-ends.herokuapp.com/accounts/login/)  | Yes|No|No
+[All Wines](https://odds-and-ends.herokuapp.com/wines/)  | Yes|Yes|Yes
+[Red Wines](https://odds-and-ends.herokuapp.com/wines/?category=red) | Yes|Yes|Yes
+[Rose Wines](https://odds-and-ends.herokuapp.com/wines/?category=rose) | Yes|Yes|Yes
+[Sparkling and Champagne](https://odds-and-ends.herokuapp.com/wines/?category=sparkling) | Yes|Yes|Yes
+[Cases](https://odds-and-ends.herokuapp.com/wines/cases/)  | Yes|Yes|Yes
 Add Wines | No|No|Yes
 Edit Wines | No|No|Yes
 Add Cases | No|No|Yes
 Edit Cases | No|No|Yes
 Profile | No|Yes|Yes
 Sign Out | No|Yes|Yes
-Contact Us | Yes|Yes|Yes
+[Contact Us](https://odds-and-ends.herokuapp.com/contact/) | Yes|Yes|Yes
 
 
 ## Wines Page 
@@ -147,14 +147,14 @@ From here, user's can adjust the quantity they would like, **Add To Bag** or **K
 
 ## Checkout Page
 From the [Checkout Page](https://odds-and-ends.herokuapp.com/checkout/) user's can:
-- Checkout as guest is they are not registered user's 
+- Checkout as a guest if they are not registered user's 
 - **Create an Account** or **Login**
 - Enter their Name, Email and Delivery details 
 - Use the delivery details stored in their profile if they are a registered user
 - If the user is not ready to pay they have the option to **Adjust Bag**
 - When they are ready to pay they can **Complete Order** and their payment is processed using Stripe payment service provider
 
-Toast notifications are received for each step and on conmpletion the user is redirected to the **Checkout Success** page, which contains a summary of their order and a confirmation email is sent.
+Toast notifications are received for each step and on completion the user is redirected to the **Checkout Success** page, which contains a summary of their order and a confirmation email is sent.
 
 ## Profile Page
 
@@ -235,6 +235,11 @@ Case Quantity | Users are limited to adding 10 of each case and cannot add a qua
 
 ## Features left to implement 
 
+- Allow user's the ability to leave reviews for cases
+- Add subscription service to allow user's to sign up for deliveries at set intervals
+- Provide a newsletter subscription 
+- Have a facility for wineries to carry out online wine tasting sessions
+- Add full set of FAQs
 
 
 ## Database
