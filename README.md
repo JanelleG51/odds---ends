@@ -100,7 +100,7 @@ Contact Us | Yes|Yes|Yes
 ----
 
 ### Wines Page 
-All wines held in stock can be viewed on the the wine pages which can be accessed usung the navigation options at the top of the page. Users can view All Wine, White Wines, Red Wines, Rose Wines and Sparkling and Champagnes. Wines on each page can be  sorted and filtered by:
+All wines held in stock can be viewed on the the wine pages which can be accessed usung the navigation options at the top of the page. Users can view [All Wine](https://odds-and-ends.herokuapp.com/wines/), [White Wines](https://odds-and-ends.herokuapp.com/wines/?category=white), [Red Wines](https://odds-and-ends.herokuapp.com/wines/?category=red), [Rose Wines](https://odds-and-ends.herokuapp.com/wines/?category=rose) and [Sparkling and Champagnes](https://odds-and-ends.herokuapp.com/wines/?category=sparkling). Wines on each page can be  sorted and filtered by:
 
 - Country
 - Region 
@@ -208,6 +208,17 @@ Toast notifications are used in this site to keep user's informed of actions bei
 * Information 
     * Revisiting previous orders 
     * What wine or case is being edited
+
+## CRUD Functionality 
+Admin users have full CRUD capability directly from the frontend of the site accessed using their admin login.
+
+From the account dropdown menu, admin user's can:
+- Add (Create) cases and wines using the **Product Management** form. They are added directly to the database and show immediately on the sites frontend
+
+From **All Wines** and **All Cases** admin user's can:
+
+- Edit(Update) cases and wines from the **All Wines** and **All Cases** pages by accessing the edit link. The item information appears on the form and all edits are sent to the database and updated immediately on the frontend.
+- Delete cases and wines by accessing the **Wine Details** and **Case Details** pages. On clicking the delete button, as part of defensive design, a confirmation modal appears allowing the action to either be cancelled or confirmed. Once confirmed, the item is deleted from the database and all changes are reflected immediately on the frontend 
 
 
 ## Features left to implement 
