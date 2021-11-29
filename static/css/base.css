@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Concert+One&family=Permanent+Marker&display=swap');
 
+/* Global styling */
+
 html {
     height: 100%;
 }
@@ -17,18 +19,14 @@ a {
 
 }
 
+a:hover {
+    color: #DF8080;
+}
+
 hr {
     border-top: 1px solid;
     color: #8E0413;
     width: 80vw; 
-}
-
-.heading-form-rule {
-    width: 60vw;
-}
-
-.form-rule {
-    width: 30vw;
 }
 
 h1,
@@ -38,10 +36,10 @@ h2,
     font-family: 'Permanent Marker', sans-serif;
 }
 
-a:hover {
-    color: #DF8080;
-}
+.base-container {
+    min-height: 100vh;
 
+}
 .logo-size {
     font-size: 4rem;
 
@@ -61,6 +59,16 @@ a:hover {
     color: #004733;
 }
 
+
+.form-rule {
+    width: 30vw;
+}
+
+.heading-form-rule {
+    width: 60vw;
+}
+
+
 .btn {
     color: #F3F4F6;
     background-color:#8E0413;
@@ -77,11 +85,6 @@ a:hover {
     color: #004733;
 }
 
-.base-container {
-    min-height: 100vh;
-
-}
-
 /* home page */
 
 .home-logo {
@@ -89,6 +92,7 @@ a:hover {
 }
 
 /* back to top button */
+
 .btt-link,
 .update-link,
 .remove-item {
@@ -233,3 +237,19 @@ footer p {
     margin-bottom: 3px;
     padding: 3px 6px;
 }
+
+/* media queries */
+
+@media(max-width: 475px){
+
+body {
+    font-size: .75rem;
+    }
+
+.nav-link {
+    color:  #004733 !important;
+    font-size: .85rem !important;
+    font-family: 'Permanent Marker';
+    }
+}
+
