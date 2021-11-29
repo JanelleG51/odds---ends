@@ -144,7 +144,8 @@ h2,
 
 .allauth-form-inner-content input::placeholder {
     color: #aab7c4;
-    font-size: 0.85rem;
+    font-size: .85rem;
+    
 }
 
 .allauth-form-inner-content button,
@@ -212,8 +213,7 @@ h2,
 }
 
 .form-control {
-    padding: 0.01rem 0.2rem !important;
-  
+    padding: 0.01rem 0.2rem !important; 
 }
 
 /* footer */
