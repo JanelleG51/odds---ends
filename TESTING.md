@@ -1,5 +1,13 @@
 # Testing 
-## Contents 
+## Contents
+  * [User Story Testing](#user-story-testing)
+  * [Validator Testing](#validator-testing)
+  * [Manual Testing](#manual-testing)
+  * [Bugs Fixes](#bugs-fixes)
+  * [Known Bugs](#known-bugs)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
 
 ## User Story Testing 
 

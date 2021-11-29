@@ -59,8 +59,8 @@
                                 <div class="form-group">
                                     <div class="input-group">
                                         <div class="input-group-prepend">
-                                            <button class="decrement-qty btn btn-sm btn-black rounded-0"
-                                                data-item_id="{{ item.item.id }}" id="decrement-qty_{{ item.item.id }}">
+                                            <button class="decrement-qty btn btn-sm" data-item_id="{{ item.item.id }}"
+                                                id="decrement-qty_{{ item.item.id }}">
                                                 <span>
                                                     <i class="fas fa-minus fa-sm"></i>
                                                 </span>
@@ -70,8 +70,8 @@
                                             name="quantity" value="{{ item.quantity }}" min="1" max="10"
                                             data-item_id="{{ item.item.id }}" id="id_qty_{{ item.item.id }}">
                                         <div class="input-group-append">
-                                            <button class="increment-qty btn btn-sm btn-black rounded-0"
-                                                data-item_id="{{ item.item.id }}" id="increment-qty_{{ item.item.id }}">
+                                            <button class="increment-qty btn btn-sm" data-item_id="{{ item.item.id }}"
+                                                id="increment-qty_{{ item.item.id }}">
                                                 <span>
                                                     <i class="fas fa-plus fa-sm"></i>
                                                 </span>
@@ -101,13 +101,13 @@
                     </tr>
                     <tr>
                         <td colspan="5" class="text-right">
-                            <a href="{% url 'cases' %}" class="btn btn-outline-black rounded-0 btn-lg">
+                            <a href="{% url 'cases' %}" class="btn btn-lg btn-cancel rounded-0">
                                 <span class="icon">
                                     <i class="fas fa-chevron-left"></i>
                                 </span>
                                 <span class="text-uppercase">Keep Shopping</span>
                             </a>
-                            <a href="{% url 'checkout' %}" class="btn btn-black rounded-0 btn-lg">
+                            <a href="{% url 'checkout' %}" class="btn rounded-0 btn-lg">
                                 <span class="text-uppercase">Secure Checkout</span>
                                 <span class="icon">
                                     <i class="fas fa-lock"></i>
@@ -119,7 +119,7 @@
             </div>
             {% else %}
             <p class="lead mb-5">Your bag is empty.</p>
-            <a href="{% url 'cases' %}" class="btn btn-outline-black rounded-0 btn-lg">
+            <a href="{% url 'cases' %}" class="btn rounded-0 btn-lg">
                 <span class="icon">
                     <i class="fas fa-chevron-left"></i>
                 </span>

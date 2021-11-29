@@ -88,8 +88,6 @@ a:hover {
     font-size: 2.75rem;
 }
 
-
-
 /* back to top button */
 .btt-link,
 .update-link,
@@ -210,13 +208,8 @@ a:hover {
 }
 
 .form-control {
-    padding: 0.01rem 0.375rem !important;
+    padding: 0.01rem 0.2rem !important;
   
-}
-
-.authentication-container h2,
-.profile-container h2 {
-    font-size: 1.2rem;
 }
 
 /* footer */
@@ -227,7 +220,7 @@ a:hover {
     border-bottom: 1px black solid;
     width: 80vw;
     padding: 15px 0px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 
 }
 

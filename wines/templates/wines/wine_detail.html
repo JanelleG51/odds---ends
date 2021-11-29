@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_title %}Wine Detail{% endblock %}
+
 {% block page_header %}
 
 {% endblock %}
@@ -41,8 +43,9 @@
                 {% if request.user.is_superuser %}
                 <div>
                     <small class="ml-3">
-                        <a class="edit-link" href="{% url 'edit_wine' wine.id %}">Edit</a> | 
-                        <button type="button" class="btn-cancel" data-toggle="modal" data-target="#delete_wine{{wine.id}}">
+                        <a class="edit-link" href="{% url 'edit_wine' wine.id %}">Edit</a> |
+                        <button type="button" class="btn-cancel" data-toggle="modal"
+                            data-target="#delete_wine{{wine.id}}">
                             Delete Wine
                         </button>
                     </small>
@@ -60,7 +63,7 @@
                             <div class="modal-body text-left">
                                 <p class="mt-1">You are about to pemanantly delete this wine</p>
                                 <p class="mt-1">Once you have deleted it, you cannot get it back</p>
-                                <p class="mt-1">Are you sure that you wish to delete?</p>
+                                <p class="mt-1">Are you sure that you want to delete?</p>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-cancel mr-2" data-dismiss="modal">Cancel</button>
@@ -69,9 +72,10 @@
                         </div>
                     </div>
                     {% endif %}
-                    
+
                 </div>
             </div>
         </div>
     </div>
-    {% endblock %}
+</div>
+{% endblock %}
