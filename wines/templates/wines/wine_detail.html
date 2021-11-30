@@ -18,7 +18,7 @@
                 </a>
                 {% else %}
                 <a href="">
-                    <img class="card-img-top img-fluid" src="/media/noimage.png" alt="{{ wine.name }}">
+                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}{{ noimage.png }}" alt="{{ wine.name }}">
                 </a>
                 {% endif %}
             </div>
@@ -37,8 +37,8 @@
                 <p class="mt-3">{{ wine.region }}</p>
                 <p class="mt-3">{{ wine.country }}</p>
                 <div class="mb-3">
-                    <a class="btn btn-cancel" href="{% url 'wines' %}">Keep Browsing Wines</a> |
-                    <a class="btn" href="{% url 'cases' %}">Buy Our Cases</a>
+                    <a class="btn btn-cancel mb-3" href="{% url 'wines' %}">Keep Browsing Wines</a> |
+                    <a class="btn mb-3" href="{% url 'cases' %}">Buy Our Cases</a>
                 </div>
                 {% if request.user.is_superuser %}
                 <div>

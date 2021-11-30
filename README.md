@@ -214,7 +214,7 @@ All site user's can get in touch with the site admin through the [Contact Page](
 ## Emails and Notifications
 
 ## Emails
-User's receive emails to their when chosen email address when:
+User's receive emails to their chosen email address when:
 - They register for an account to verify their email
 - When they have forgotten their password and need to reset
 - After placing an order as an order confirmation 
@@ -230,8 +230,8 @@ Toast notifications are used in this site to keep user's informed of actions bei
     * Adding cases to the bag
     * Updating cases in the bag
     * Completing a purchase 
-    * Using the Conact form
-    * After successfuly adding, editing, deleting wines or cases
+    * Using the Contact form
+    * After successfully adding, editing, deleting wines or cases
 
 * Errors
     * Accessing admin only functions 
@@ -320,7 +320,7 @@ Results can be found through the Testing link below.
 
 The result of manual testing for the site can be found in the Testing docuemnt below:
 
-[Testing](TESTING.md)
+[TESTING.md](TESTING.md)
 
 
 ## Technologies Used 
