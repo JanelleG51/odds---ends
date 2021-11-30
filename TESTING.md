@@ -116,11 +116,29 @@ Site administrators can create, update and delete content directly through the f
 - Be notified by email when customers or wineries make contact using the contact page.
 
 Customer's and wineries are invited to contact the site admin and can do so using the site Contact page. User's are notified their email has been sent and Admin are notified by email when someone makes contact:
+
 ![Email](readme_docs/user_stories/email_toast.png)
 ![Contact](readme_docs/user_stories/email_received.png)
 
 
 ## Validator Testing 
+
+The developer used [W3C HTML Validator](https://validator.w3.org/), [W3C CSS Validator](https://jigsaw.w3.org/css-validator/), [JSHint Validator](https://jshint.com/) [PEP8 Validator](http://pep8online.com/) for code validation.
+
+When passing the HTML source code through the validator, one error for an additonal icon element appeared and this was rectifed. The code used to display the upload image field as a button to improve UX showed a duplication of id error, however this was not evident. As this particular code was serving a very specific purpose the developer chose to leave the it as it was. Once the extra element was removed all other HTML code on pages other than the edit/add pages had no errors or warnings:
+
+![html](readme_docs/validator_images/home_page_html_error.png)
+![id](readme_docs/validator_images/add_wine_error.png)
+
+All CSS was passed through the CSS Validator with no errors or warnings:
+
+![CSS](readme_docs/validator_images/css_validation.png)
+
+All JS content passed through the JSHint Validator with no warnings or errors.
+
+All Python code was passed the through PEP8 Validator and highlighted strings that were too long to be compliant, these issues were rectified and all code passed:
+
+![Pep8](readme_docs/validator_images/pep_8_validation.png)
 
 ## Manual Testing 
 

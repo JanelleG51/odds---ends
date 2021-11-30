@@ -324,18 +324,18 @@ The result of manual testing for the site can be found in the Testing docuemnt b
 
 
 ## Technologies Used 
-- [HTML5](https://en.wikipedia.org/wiki/HTML5) – used to complete the structure of the site.
-- [CSS3](https://en.wikipedia.org/wiki/CSS) - used to style the presentation of the content on the site.
-- [JavaScript](https://www.javascript.com/) & [jQuery](https://jquery.com/) - were used for front-end dynamic interaction
-- [Python](https://www.python.org/) – was incorporated as the back-end logic and the means to run/view the site. 
-Python Modules: 
-
-- [Google Fonts](https://fonts.google.com/) – provided the fonts for this site.
-- [GitHub](https://github.com/join/get-started) - is the hosting platform used to store the source code for the site.
-- Git - is used as version control software to commit and push code to the GitHub repository where the source code is stored.
-- [Heroku](https://id.heroku.com/login) - to deploy the live website.
-- [Balsamiq](https://balsamiq.com/) - was used to create wireframes for the design.
-- [Font Awesome](https://fontawesome.com/) - icons displayed throughout the site are taken from Font Awesome.
+- [HTML5](https://en.wikipedia.org/wiki/HTML5)
+- [CSS3](https://en.wikipedia.org/wiki/CSS) 
+- [JavaScript](https://www.javascript.com/) & [jQuery](https://jquery.com/) 
+- [Python](https://www.python.org/) 
+- [Django](https://www.djangoproject.com/) 
+- [Google Fonts](https://fonts.google.com/) 
+- [GitHub](https://github.com/join/get-started) 
+- Git 
+- [Heroku](https://id.heroku.com/login) 
+- [Balsamiq](https://balsamiq.com/) 
+- [Font Awesome](https://fontawesome.com/) 
+- [Bootstrap](https://getbootstrap.com/docs/4.1/getting-started/introduction/)
 
 ## Configuration
 ## Deployment to Heroku
@@ -512,5 +512,5 @@ The developer gives credit to the Boutique Ado walkthrough project hosted by the
 The developer also referred to the [Django Documentation](https://docs.djangoproject.com/en/3.2/) several times throughout the process to understand static files, deployment and modelling. 
 
 ### Acknowledgements
-The developer would like to thank and acknowledge all the help and support that has been given by so many people so freely over the past year. In particluar, my mentor Victor Miclovich, the Slack community and the wonderful Whatsapp group of other students that I'm a part of who have been amazing just when it was needed.
+The developer would like to thank and acknowledge all the help and support that has been given by so many people so freely over the past year. In particular, my mentor Victor Miclovich, the Slack community and the wonderful Whatsapp group of other students that I'm a part of who have been amazing just when it was needed.
 
