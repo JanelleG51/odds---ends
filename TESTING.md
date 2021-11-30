@@ -81,18 +81,43 @@ All user's can register for an account providing 3 pieces of information, an ema
 ![Validation](readme_docs/user_stories/registration_validation.png)
 - Easily login and logout.
 
-User can easily sign in with either their username or password:
-![Sign in]()
+User can easily sign in with either their username or password and sign out by confirming they would like to sign out of the site:
+
+![Sign in](readme_docs/user_stories/sign_in.png)
 - Reset my password. 
-- Receive confirmation of registration. 
-- View all my details and orders in my own profile. 
+
+User's can reset their password by clicking on the Forgot Password link on the sign in page. They will be sent an email to follow a link to reset:
+![Reset password](readme_docs/user_stories/password_reset.png)
+![Reset Email](readme_docs/user_stories/password_reset_email.png)
+- Receive confirmation of registration.
+
+User's are required to verify their email on registration and an email to allow them to do this is sent. Once verified, user's can then log in:
+
+![Registration](readme_docs/user_stories/confirm_email_address.png)
+![Verify](readme_docs/user_stories/verify_email.png)
+- View all my details and orders in my own profile.
+
+Once registered, user's will be able to see their purchase history in their profile page:
+![Profile](readme_docs/user_stories/order_history.png)
 - Update the details in my profile.
+
+User's can update all of their default information directly from their profile by filling in the fields with the new information and clicking the Update Information button.
 
 #### As a site owner, I want to be able to:
 - Have administrator access directly through the site.
-- Add, edit or delete the wines in stock. 
+
+Site administrators can create, update and delete content directly through the frontend of the site.
+- Add, edit or delete the wines in stock.
+
+![Add wine](readme_docs/user_stories/add_wine.png)
 - Add, edit or delete the cases for sale.
+
+![Edit case](readme_docs/user_stories/edit_case.png)
 - Be notified by email when customers or wineries make contact using the contact page.
+
+Customer's and wineries are invited to contact the site admin and can do so using the site Contact page. User's are notified their email has been sent and Admin are notified by email when someone makes contact:
+![Email](readme_docs/user_stories/email_toast.png)
+![Contact](readme_docs/user_stories/email_received.png)
 
 
 ## Validator Testing 

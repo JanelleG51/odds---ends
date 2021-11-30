@@ -2,6 +2,8 @@
 
 At Odds & Ends we never like to see a good bottle of wine being neglected, so it is our mission to gather all of the odd bottles and bin ends that vineyards have lying around and pass them on to our customers by the case for a great price. The offering is simple, pick a case at one of our three price points and you will receive a selection of 12 bottles from the stock you can see on our site. The more you pay for the case, the more expensive the overall value and your case is always guaranteed to be worth at least 50% more than you’ve paid! You can buy once or as many times as you like to take the opportunity to sample wines from all over the world that you may not get anywhere else for a bargain price.
 
+![Mock-up](readme_docs/mock_up.png)
+
 You can view the live site [here.](https://odds-and-ends.herokuapp.com/)
 
 
@@ -510,4 +512,5 @@ The developer gives credit to the Boutique Ado walkthrough project hosted by the
 The developer also referred to the [Django Documentation](https://docs.djangoproject.com/en/3.2/) several times throughout the process to understand static files, deployment and modelling. 
 
 ### Acknowledgements
+The developer would like to thank and acknowledge all the help and support that has been given by so many people so freely over the past year. In particluar, my mentor Victor Miclovich, the Slack community and the wonderful Whatsapp group of other students that I'm a part of who have been amazing just when it was needed.
 
