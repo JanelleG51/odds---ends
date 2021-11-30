@@ -258,8 +258,43 @@ Success message | When a user logs in a success toast appears to confirm an emai
 Verify Email | A message appears on screen confirming the user is required to confirm their email | Pass
 Sign in link | Directs users to the sign in page | Pass
 
+## Admin only pages
+## Add Wine 
+Feature | Expected Behaviour | Outcome |
+-------|--------------------- |---------|
+Add wine link in My Account dropdown | Takes user to add wine page | Pass
+Required Fields | The form will not submit unless all required fields are completed | Pass
+No image | If the user does not upload an image then the default noimage.png should display | Fail
+Success Toast | A success toast should appear letting the user know the wine has been added | Pass 
 
 
+## Add Case 
+Feature | Expected Behaviour | Outcome |
+-------|--------------------- |---------|
+Add case link in My Account dropdown | Takes user to add case page | Pass
+Required Fields | The form will not submit unless all required fields are completed | Pass
+No image | If the user does not upload an image then the default noimage.png should display | Fail
+Success Toast | A success toast should appear letting the user know the wine has been added | Pass 
+
+# Edit Wine 
+Feature | Expected Behaviour | Outcome |
+-------|--------------------- |---------|
+Edit wine link | Should appear on wines pages and wines detail page and takes user to edit the correct wine | Pass
+Alert Toast | An alert toast should appear informing the user of what wine they are editing | Pass
+Required Fields | The form will not submit unless all required fields are completed | Pass
+Image field | The current image should appear and allow the user to remove it | Pass
+Cancel button | Should direct user back to the wines page | Pass
+Update button | When clicked the user should be redirected to the wine detail page and a success toast should appear | Pass
+
+# Edit Case 
+Feature | Expected Behaviour | Outcome |
+-------|--------------------- |---------|
+Edit case link | Should appear on case pages and case detail page and takes user to edit the correct case | Pass
+Alert Toast | An alert toast should appear informing the user of what case they are editing | Pass
+Required Fields | The form will not submit unless all required fields are completed | Pass
+Image field | The current image should appear and allow the user to remove it | Pass
+Cancel button | Should direct user back to the cases page | Pass
+Update button | When clicked the user should be redirected to the case detail page and a success toast should appear | Pass
 
 ## Bugs Fixes
 
