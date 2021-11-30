@@ -276,7 +276,7 @@ Required Fields | The form will not submit unless all required fields are comple
 No image | If the user does not upload an image then the default noimage.png should display | Fail
 Success Toast | A success toast should appear letting the user know the wine has been added | Pass 
 
-# Edit Wine 
+## Edit Wine 
 Feature | Expected Behaviour | Outcome |
 -------|--------------------- |---------|
 Edit wine link | Should appear on wines pages and wines detail page and takes user to edit the correct wine | Pass
@@ -286,7 +286,7 @@ Image field | The current image should appear and allow the user to remove it | 
 Cancel button | Should direct user back to the wines page | Pass
 Update button | When clicked the user should be redirected to the wine detail page and a success toast should appear | Pass
 
-# Edit Case 
+## Edit Case 
 Feature | Expected Behaviour | Outcome |
 -------|--------------------- |---------|
 Edit case link | Should appear on case pages and case detail page and takes user to edit the correct case | Pass
@@ -296,7 +296,26 @@ Image field | The current image should appear and allow the user to remove it | 
 Cancel button | Should direct user back to the cases page | Pass
 Update button | When clicked the user should be redirected to the case detail page and a success toast should appear | Pass
 
-## Bugs Fixes
+## Bugs & Fixes
+
+Bug | Fix
+----| ----
+Categories not loading to Django DB | Incorrectly named model in categories JSON file - changed wine.case to wine.category
+Wines.json would not load | Text not properly formatted - cut file back and loaded in chunks to idenify the error 
+Cases not rendering to cases.html | Set cases as the first route of the path - changed this to wines as the cases are situated in the wines app. Removed cases path from main app URLs
+Case details not rendering correctly | As code is read top down, the URL path needed to be more specific. Included wine in front of wine_id and case in front of case.id
+JS files not feeding through to templates | From Django documentation - create Staticfiles folder, add all static folders there and add the static root to settings.py
+Not able to pull through images from Django database | Change image templating from {{ MEDIA_URL }}wine.image to {{ MEDIA_URL}}{{ wine.image }}
+Remove item button not working | Required to add script directly to the bottom of bag.html to allow csrf token to work correctly
+On deployment to Heroku, the adjust quantity in bag function returned an error that crashed the site | Using the Heroku tails log to debug it was discovered an unecessary if statement was preventing a variable being identified. Removing the if statement resolved the issue 
+Quantity buttons allowing users to select negative numbers | Moving the quantity JS to an if statement to prevent nummbers going below 1 fixed the issue 
 
 ## Known Bugs 
+
+During the testing process the developer discoverd to known bugs:
+
+- Placeholder and entered text in form fields is partailly obscured. The developer has tried targetting and over riding all CSS on the input fields and is able to change the values and styling but the problem still persists and requires fixing.
+- When adding a new case or wine, the noimage.png should appear as default if no image is uploaded. This image is not pulling through on Heroku. The developer has tried changing the template path name but is an issue that has not yet been resolved.
+
+
 
