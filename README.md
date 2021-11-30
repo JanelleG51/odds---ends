@@ -105,6 +105,7 @@ Imagery for this site is very much focussed on wine and vineyards with the major
 
 ## Wireframes
 
+[Wireframes](readme_docs/wireframes.pdf)
 
 # Features 
 
