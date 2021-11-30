@@ -58,6 +58,7 @@ Using the quantity buttons (plus and minus) in the picture above, user's can eas
 - Easily enter payment details.
 
 Unregistered user's are required to provide their delivery details and card information on one page to make a purchase. Registered user's can use the saved delivery details from their profiles:
+
 ![Payment](readme_docs/user_stories/user_story_eleven.png)
 - Know the payment process is safe and secure.
 
@@ -140,7 +141,125 @@ All Python code was passed the through PEP8 Validator and highlighted strings th
 
 ![Pep8](readme_docs/validator_images/pep_8_validation.png)
 
+### Lighthouse Results
+
+![lighthouse](readme_docs/validator_images/lighthouse_score.png)
+
 ## Manual Testing 
+
+## Navigation 
+Feature | Expected Behaviour | Outcome |
+-------|--------------------- |---------|
+Site Logo | Takes user back to home page | Pass
+Account Link | Provides dropdown with links depending on permissions | Pass
+Register Link | Takes user to Registration page | Pass
+Sign In Link | Takes user to Sign In page | Pass
+Add Wine (admin only) | Takes user to Add Wine page | Pass
+Add Case (admin only) | Takes user to Add case page | Pass
+Bag Link | Take user to bag page regardless of content | Pass
+Navigation Bar | Each link opens a dropdown menu where appropiate and links user to the requested page | Pass 
+
+## Home Page 
+
+Feature | Expected Behaviour | Outcome |
+-------|--------------------- |---------|
+Site Logo (on page) | Takes user back to home page | Pass
+Buy Our Cases button | Takes user to Cases page | Pass
+Contact Us! button | Takes user to Contact page | Pass
+Browse Our Wines! button | Take user to All Wines page | Pass 
+
+## Wine Pages 
+Feature | Expected Behaviour | Outcome |
+-------|--------------------- |---------|
+Provide a view of all wines on the site | Shows all wines or a specific category and a count of the total number of each | Pass
+Users can click on each wine and be taken to it's detail page | The user is navigated to the detail page for each wine | Pass
+Filter all wines | When a user filters wine by the options in the dropdown filter the categories display correctly  | Pass
+Back to top button | When a user scrolls down the page the back to top button stays fixed in the bottom right corner and takes users back the top of the page when clicked | Pass 
+Edit button (admin only) | Takes admin to edit page for the specific wine | Pass 
+
+## Wine Detail Page 
+
+Feature | Expected Behaviour | Outcome |
+-------|--------------------- |---------|
+Keep Browsing Wines button | Takes user back to all wines page | Pass
+Buy Our Cases button | Takes user to Cases page | Pass
+Edit button (admin only) | Takes admin to edit page for that specific wine | Pass
+Delete button (admin only) | Reveals a confirmation modal that requires the user to confirm deletion or cancel. When confirmed, the wine is deleted | Pass
+
+
+## Cases Page
+Feature | Expected Behaviour | Outcome |
+-------|--------------------- |---------|
+Shows user all cases on offer | Case and their names and prices appear on view | Pass
+Taken to case detail page | When clicked the user is directed to the case detail page | Pass
+Edit button (admin only) | Takes admin to edit page for that specific wine | Pass
+
+## Case Detail Page 
+Feature | Expected Behaviour | Outcome |
+-------|--------------------- |---------|
+Keep Shopping button | Takes user back to all cases page | Pass
+Type Selector | Dropdown menu that allows users to select what type of case they would like  | Pass
+Quantity selector | Allows user to select between 1 to 10 cases | Pass
+Add to Bag button | Adds the user selection the the bag and a success confirmation toast appears at the top right of the screen with added contents and link to checkout | Pass
+Edit button (admin only) | Takes admin to edit page for that specific case | Pass
+Delete button (admin only) | Reveals a confirmation modal that requires the user to confirm deletion or cancel. When confimred, the case is deleted | Pass
+
+## Bag Page 
+
+Feature | Expected Behaviour | Outcome |
+-------|--------------------- |---------|
+Keep Shopping button | Takes user back to all cases page | Pass
+Quantity selector | Allows user to select between 1 to 10 cases | Pass
+Update button | Updates the contents of the bag to the users selected value and adjusts the total, delivey and grand total. A success toast appears to confirm the users action| Pass
+Remove button | Removes the selected case from the bag adjusts the total, delivey and grand total. A success toast appears to confirm the users action. If the bag is now empty, it will say the bag is empty and show the Keep Shopping button | Pass
+Secure Checkout button | Takes user to the checkout page | Pass 
+
+## Checkout Page 
+
+Feature | Expected Behaviour | Outcome |
+-------|--------------------- |---------|
+Adjust bag button | Takes user back to bag page | Pass
+Create an account button | Only shows for users with no account or not signed in. Direct users to the Register page | Pass
+Login button | Only shows for users with no account or not signed in. Direct user's to the Register page | Pass
+Secure Checkout button | Takes user to the checkout page | Pass 
+Complete order button | Once users have completed their delivery and payment details, the complete order button triggers the Stripe payment system and the webhook creates the order. A loading spinner should appear then confirmation of the order | Pass 
+
+## Contact Page 
+
+Feature | Expected Behaviour | Outcome |
+-------|--------------------- |---------|
+Select contact type | Dropdown lets user's select if they are a Customer or a Winery | Pass
+Confirmation | On hitting the send button users receive a success toast notification at the top right of screen  | Pass
+Email sent | Site admin recieves the email | Pass
+
+## Footer
+
+Feature | Expected Behaviour | Outcome |
+-------|--------------------- |---------|
+Links in Customer Care | Links all direct to Contact Us page | Pass
+Links in Account | Register and Sign in only display when user is not logged in. Profile link displays when user is logged in | Pass
+Register and Sign in| Links lead to register and sign in pages | Pass
+Bag Link | Displays all the time and directs users to the bag page | Pass 
+Social Links | Direct users to exteral site in a new page | Pass
+
+## Sign In Page 
+
+Feature | Expected Behaviour | Outcome |
+-------|--------------------- |---------|
+Success message | When a user logs in a success toast appears to confirm the login and shows the users username | Pass
+Remember me | Stores the users login details | Pass
+Forget password | Send user an email with a link to reset their password | Pass
+Register | Directs users to the register page to create and account if they don't have one | Pass 
+
+## Register Page
+Feature | Expected Behaviour | Outcome |
+-------|--------------------- |---------|
+Success message | When a user logs in a success toast appears to confirm an email has been sent to the users email address to complete verification | Pass
+Verify Email | A message appears on screen confirming the user is required to confirm their email | Pass
+Sign in link | Directs users to the sign in page | Pass
+
+
+
 
 ## Bugs Fixes
 
