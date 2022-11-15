@@ -4,7 +4,7 @@ At Odds & Ends we never like to see a good bottle of wine being neglected, so it
 
 ![Mock-up](readme_docs/mock_up.png)
 
-You can view the live site [here.](https://odds-and-ends.herokuapp.com/)
+You can view the live site [here.](https://odds-and-ends.onrender.com/)
 
 
 
