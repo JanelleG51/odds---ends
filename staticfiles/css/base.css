@@ -1,17 +1,105 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Concert+One&family=Permanent+Marker&display=swap');
+
+/* Global styling */
+
 html {
-   height: 100%;
+    height: 100%;
 }
 
 body {
-    height: calc(100vh - 164px);
-    color:black;
+    height: 100%;
+    color: black;
+    font-family: 'Concert One', sans-serif;
+    font-size: 1rem;
 }
 
-.header-container {
-    padding-top: 25px;
+a {
+    text-decoration: none !important;
+
+}
+
+hr {
+    border-top: 1px solid;
+    color: #8E0413;
+    width: 80vw; 
+}
+
+h1,
+h2,
+.branding,
+.bag-link {
+    font-family: 'Permanent Marker', sans-serif;
+}
+
+.base-container {
+    min-height: 100vh;
+
+}
+.logo-size {
+    font-size: 4rem;
+
+}
+
+a:hover {
+    color: #DF8080;
+}
+
+.nav-link {
+    color:  #004733 !important;
+    font-size: 1.20rem !important;
+    font-family: 'Permanent Marker';
+}
+
+.text-red {
+    color: #8E0413;
+}
+
+.text-green {
+    color: #004733;
+}
+
+
+.form-rule {
+    width: 30vw;
+}
+
+.heading-form-rule {
+    width: 60vw;
+}
+
+
+.btn {
+    color: #F3F4F6;
+    background-color:#8E0413;
+    border: 1px solid;
+}
+
+.btn-cancel {
+    color: #8E0413;
+    background-color:#F3F4F6;
+    border: 1px solid black ;
+}
+
+.edit-link {
+    color: #004733;
+}
+
+/* home page */
+
+.home-logo {
+    font-size: 2.75rem;
 }
 
 /* back to top button */
+
 .btt-link,
 .update-link,
 .remove-item {
@@ -52,8 +140,8 @@ body {
 /* allauth forms styling override */
 
 .allauth-form-inner-content p {
-    margin-top: 1.5rem; /* mt-4 */
-    color: #6c757d; /* text-secondary */
+    margin-top: 1.5rem;
+    color: #6c757d;
 }
 
 .allauth-form-inner-content input {
@@ -61,46 +149,74 @@ body {
     border-radius: 0;
 }
 
-.allauth-form-inner-content label:not([for='id_remember']) {
-    display: none;
+.allauth-form-inner-content input::-webkit-input-placeholder {
+    color: #aab7c4;
+    font-size: .85rem;
+    
+}
+
+.allauth-form-inner-content input::-moz-placeholder {
+    color: #aab7c4;
+    font-size: .85rem;
+    
+}
+
+.allauth-form-inner-content input:-ms-input-placeholder {
+    color: #aab7c4;
+    font-size: .85rem;
+    
+}
+
+.allauth-form-inner-content input::-ms-input-placeholder {
+    color: #aab7c4;
+    font-size: .85rem;
+    
 }
 
 .allauth-form-inner-content input::placeholder {
     color: #aab7c4;
+    font-size: .85rem;
+    
 }
 
 .allauth-form-inner-content button,
 .allauth-form-inner-content input[type='submit'] {
-	/* btn */
-	display: inline-block;
+    /* btn */
+    display: inline-block;
     font-weight: 400;
-    color: #fff;
+    color: #F3F4F6;
     text-align: center;
     vertical-align: middle;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    background-color: #000;
-    border: 1px solid #000;
+    background-color:#8E0413;
+    border: 1px solid;
     padding: .375rem .75rem;
     font-size: 1rem;
     line-height: 1.5;
     border-radius: 0;
+    
 
     /* standard bootstrap btn transitions */
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    -webkit-transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
+    -o-transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
 }
 
 .allauth-form-inner-content button:hover,
-.allauth-form-inner-content input[type='submit']:hover {	
-	color: #fff;
+.allauth-form-inner-content input[type='submit']:hover {
+    color: #fff;
     background-color: #222;
     border-color: #222;
 }
 
 .allauth-form-inner-content a {
-	color: #17a2b8; /* text-info */
+    color: #004733;
+    /* text-info */
 }
 
 /* Product form */
@@ -131,4 +247,43 @@ body {
     border-radius: 0;
 }
 
+.form-control {
+    padding: 0.01rem 0.2rem !important; 
+}
 
+/* footer */
+
+.footer-container {
+    background-color: #fff;
+    border-top: 1px black solid;
+    border-bottom: 1px black solid;
+    width: 80vw;
+    padding: 15px 0px;
+    margin-bottom: 10px;
+
+}
+
+.footer-container ul {
+    padding: 3px 6px;
+}
+
+footer p {
+    font-size: 1.25rem;
+    margin-bottom: 3px;
+    padding: 3px 6px;
+}
+
+/* media queries */
+
+@media(max-width: 375px){
+
+.table-font {
+    font-size: .75rem;
+    }
+
+.nav-link {
+    color:  #004733 !important;
+    font-size: .85rem !important;
+    font-family: 'Permanent Marker';
+    }
+}

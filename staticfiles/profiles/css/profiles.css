@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
 .order-history {
     max-height: 416px; /* height of profile form + submit button */
     overflow-y: auto;
@@ -5,6 +12,22 @@
 
 #profile-update-form .form-control {
     color: #000;
+}
+
+#profile-update-form input::-webkit-input-placeholder {
+    color: #aab7c4;
+}
+
+#profile-update-form input::-moz-placeholder {
+    color: #aab7c4;
+}
+
+#profile-update-form input:-ms-input-placeholder {
+    color: #aab7c4;
+}
+
+#profile-update-form input::-ms-input-placeholder {
+    color: #aab7c4;
 }
 
 #profile-update-form input::placeholder {
